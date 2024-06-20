@@ -39,6 +39,26 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <style>
+  .center-table {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  table {
+    width: auto; /* Set the table width to auto to prevent it from stretching to 100% */
+    border-collapse: collapse;
+    margin: 0 auto; /* Center the table horizontally */
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+</style>
 </head>
 <body>
 
@@ -52,7 +72,7 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://github.com/quochungto">
+      <a class="navbar-item" href="https://fsoft-ai4code.github.io/srank-coderanker/">
       <span class="icon">
           <i class="fas fa-home"></i>
       </span>
@@ -191,10 +211,14 @@
             The concept of "functional overlap" is illustrated in Figure 1. 
             In essence, we execute code solutions from each cluster on the same test inputs and compare their outputs. 
             The level of output match indicates the extent of functional overlap between two clusters.
+          </p>
+          <p>
             <img src="static/images/illustration.png"/>
           </p>
           <p>
             The overall method pipeline of SRank is illustrated in Figure 2.
+          </p>
+          <p>
             <img src="static/images/overview.png"/>
           </p>
         </div>
@@ -218,6 +242,7 @@
             achieving significant improvements in functional correctness measured in pass@1.
           </p>
               <h3>HumanEval</h3>
+              <div class="center-table">
     <table>
         <thead>
             <tr>
@@ -278,8 +303,10 @@
             </tr>
         </tbody>
     </table>
+              </div>
 
     <h3>MBPP-S</h3>
+    <div class="center-table">
     <table>
         <thead>
             <tr>
@@ -340,13 +367,14 @@
             </tr>
         </tbody>
     </table>
+    </div>
           <p>
             These results demonstrate the effectiveness of SRank in improving the accuracy of code generation across various CodeLLMs.
           </p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
+    <!--/ Experimental Results. -->
 
   </div>
 </section>
@@ -373,7 +401,7 @@
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
+    <!--/ Conclusion. -->
 
   </div>
 </section>
