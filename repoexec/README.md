@@ -1,5 +1,5 @@
 # RepoExec: Evaluate Code Generation with a Repository-Level Executable Benchmark
-Project page of RepoExec benchmark dataset. Check out it [GitHub](https://github.com/FSoft-AI4Code/RepoExec) page.
+Project page of RepoExec benchmark dataset. Check out its [GitHub](https://github.com/FSoft-AI4Code/RepoExec) page.
 
 ## Acknowledgments
 Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
