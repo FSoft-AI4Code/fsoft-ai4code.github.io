@@ -170,7 +170,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Introduction</h2>
+        <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
           <p>
             RepoExec is a pioneering benchmark that places a strong emphasis on the executability and correctness of generated code. Unlike traditional benchmarks, RepoExec ensures that the code not only compiles but also performs as intended in real-world scenarios. This is achieved through an automated system that verifies installation and runtime requirements, and dynamically generates high-coverage test cases.
@@ -178,7 +178,7 @@
           <p>
           </p>
           <p>
-            Key Features of RepoExec:
+            <b>Key Features of RepoExec:</b>
             <ul>
               <li><b>Enhanced Executability:</b> RepoExec goes beyond match-based evaluation to ensure that the generated code can be executed in real-world environments. This involves verifying that the code can be installed and run, addressing a critical aspect of real-world applicability.</li>
               <li><b>Dynamic Test Case Generation:</b> One of the standout features of RepoExec is its sophisticated mechanism for generating test cases. These test cases are designed to thoroughly assess the functionality of the generated code, ensuring that it performs the intended tasks correctly.</li>
@@ -187,12 +187,14 @@
             </ul>
           </p>
         </div>
-        <embed src="static/images/data_pipeline.pdf"/>
+        <embed src="static/images/data_pipeline.pdf" width="100%"/>
       </div>
     </div>
   </div>
-
 </section>
+
+
+
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -360,75 +362,28 @@
   </div>
 
 </section>
-<!-- End paper abstract -->
-
 
 
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Apps Gallery</h2>
-      
-
+        <h2 class="title is-3">Enhancing Functional Correctness and Dependency Invocation in Generated Code</h2>
+        <div class="content has-text-justified">
+          <p>
+            Two approaches are explored that can improve the performance of generated code.
+            <ul>
+              <li><b>Multi-round Debugging:</b> Leveraging test execution outputs and incorporating self-refinement through multiple rounds can dramatically boost a model's performance in generating accurate code and effectively utilizing dependencies.</li>
+              <li><b>Instruction tuning:</b> RepoExec also comes with a valuable instruction-tuning training dataset. The experimental results, highlighted in the table below, clearly demonstrate the effectiveness of this approach with just a single round of generation.</li>
+            </ul>
+          </p>
+        </div>
       </div>
-
-    </div>
-
-
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/screenshots/1.png" alt="MY ALT TEXT"/>
-        
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/screenshots/2.png" alt="MY ALT TEXT"/>
-        
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/screenshots/3.png" alt="MY ALT TEXT"/>
-        
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/screenshots/4.png" alt="MY ALT TEXT"/>
-    </div>
-    <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/screenshots/5.png" alt="MY ALT TEXT"/>
-    </div>
-    <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/screenshots/7.png" alt="MY ALT TEXT"/>
-    </div>
-    <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/screenshots/8.png" alt="MY ALT TEXT"/>
-    </div>
-    <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/screenshots/9.png" alt="MY ALT TEXT"/>
-    </div>
-    <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/screenshots/10.png" alt="MY ALT TEXT"/>
-    </div>
-    <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/screenshots/11.png" alt="MY ALT TEXT"/>
     </div>
   </div>
-</div>
-
-  </div>
-
-
-
 </section>
+<!-- End paper abstract -->
+
 
 
 <!-- Youtube video -->
@@ -454,12 +409,12 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@article{nguyen2024agilecoder,
-    title={AgileCoder: Dynamic Collaborative Agents for Software Development based on Agile Methodology},
-    author={Minh Huynh Nguyen and Thang Phan Chau and Phong X. Nguyen and Nghi D. Q. Bui},
-    journal={arXiv preprint arXiv:2406.11912},
-    year={2024}
-}</code></pre>
+      <pre><code>@article{nam2024repoexec,
+        title={RepoExec: Evaluate Code Generation with a Repository-Level Executable Benchmark},
+        author={Hai, Nam Le and Manh, Dung Nguyen and Bui, Nghi DQ},
+        journal={arXiv preprint arXiv:2406.11927v1},
+        year={2024}
+      }</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
