@@ -212,11 +212,11 @@
               <li><b>Dependency Management and Debugging:</b> Instruction-tuned models, on the other hand, excel in managing dependencies and debugging. These models have demonstrated a better ability to handle the complexities of integrating external libraries and resolving issues that arise during the execution of the code.</li>
             </ul>
           </p>
-          <figure>
-            <img src="static/images/llm_result.png", width="100%">
-            <figcaption>Table 1:  Pass@k (k= 1 and 5) and DIR results of various LLMs on RepoExec</figcaption>
-          </figure>
         </div>
+        <figure>
+          <img src="static/images/llm_result.png", width="100%">
+          <figcaption>Table 1:  Pass@k (k= 1 and 5) and DIR results of various LLMs on RepoExec</figcaption>
+        </figure>
       </div>
     </div>
   </div>
@@ -234,7 +234,15 @@
             Two approaches are investigated to enhance the performance of generated code in terms of both functional correctness and dependency invocation.
             <ul>
               <li><b>Multi-round Debugging:</b> Leveraging test execution outputs and incorporating self-refinement through multiple rounds can dramatically boost a model's performance in generating accurate code and effectively utilizing dependencies.</li>
+              <figure>
+                <img src="static/images/debug_result.png", width="90%">
+                <figcaption>Figure 2:  Improvement of the performance of several models on RepoExec after 3-round debugging process.</figcaption>
+              </figure>
               <li><b>Instruction tuning:</b> RepoExec also comes with a valuable instruction-tuning training dataset. The experimental results, highlighted in the table below, clearly demonstrate the effectiveness of this approach with just a single round of generation.</li>
+              <figure>
+                <img src="static/images/instruction_tuning.png", width="90%">
+                <figcaption>Table 2:  Improvement of the performance of several models on RepoExec after instruction tuning.</figcaption>
+              </figure>
             </ul>
           </p>
         </div>
