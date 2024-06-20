@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Functional Overlap Reranking for Neural Code Generation provides a novel reranking strategy for code generation advancements.">
+  <meta name="keywords" content="SRank, CodeLLM, Code Generation, Functional Overlap">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nerfies: Deformable Neural Radiance Fields</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://github.com/quochungto">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://fsoft-ai4code.github.io/repoexec/">
+              RepoExec
+            </a>
+            <a class="navbar-item" href="https://fsoft-ai4code.github.io/agilecoder/">
+              AgileCoder
+            </a>
+            <a class="navbar-item" href="https://fsoft-ai4code.github.io/srank-coderanker/">
+              SRank-CodeRanker
+            </a>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Functional Overlap Reranking for Neural Code Generation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=n4iNKPEAAAAJ&hl=en">Hung Quoc To</a>,</span>
+            <span class="author-block">
+              <a href="">Minh Huynh Nguyen</a>,</span>
+            <span class="author-block">
+              <a href="https://bdqnghi.github.io">Nghi D. Q. Bui</a></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">FPT Software AI Center, Vietnam</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2311.03366"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2311.03366"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/FSoft-AI4Code/SRank-CodeRanker"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Code Large Language Models (CodeLLMs) have ushered in a new era in code generation advancements. 
+            However, selecting the best code solutions from all possible CodeLLM outputs remains a challenge. 
+            Previous methods often overlooked the intricate functional similarities and interactions between solution clusters. 
+          </p>
+          <p>
+            We introduce <strong>SRank</strong>, a novel reranking strategy for selecting the best solutions from code generation, 
+            focusing on modeling the relationships between clusters of solutions. 
+            By quantifying the functional overlap between solution clusters, our approach provides a better ranking strategy for code solutions. 
+          </p>
+          <p>
+            Empirical results show that our method achieves remarkable results on the pass@1 score. For instance, on the Human-Eval benchmark, 
+            we achieve 69.66% in pass@1 with Codex002, 75.31% with WizardCoder, 53.99% with StarCoder, and 60.55% with CodeGen, 
+            surpassing state-of-the-art code generation reranking methods such as CodeT and Coder-Reviewer on 
+            the same CodeLLM by a significant margin (<strong>&#x2248; 6.1% improvement on average</strong>). 
+            Even in scenarios with a limited number of sampled solutions and test cases, 
+            our approach demonstrates robustness and superiority, marking a new benchmark in code generation reranking.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">How SRank Works</h2>
+        <div class="content has-text-justified">
+          <p>
+            SRank introduces a new metric called "functional overlap" to quantify the similarity between clusters of code solutions based on their execution outputs. 
+            This allows us to identify the most representative cluster that exhibits maximum overlap with all other clusters. 
+            The intuition is that the cluster interacting most comprehensively with others is likely to be the most consistent and, 
+            therefore, the most promising cluster that contains optimal solutions.
+          </p>
+          <p>
+            The concept of "functional overlap" is illustrated in Figure 1. 
+            In essence, we execute code solutions from each cluster on the same test inputs and compare their outputs. 
+            The level of output match indicates the extent of functional overlap between two clusters.
+            <img src="static/images/illustration.png"/>
+          </p>
+          <p>
+            The overall method pipeline of SRank is illustrated in Figure 2.
+            <img src="static/images/overview.png"/>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experimental Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            We evaluated SRank on several state-of-the-art CodeLLMs, including Codex, WizardCoder, StarCoder, and CodeGen.
+            Our results show that SRank consistently outperforms existing methods in code generation reranking e.g CodeT and Coder-Reviewer, 
+            achieving significant improvements in functional correctness measured in pass@1.
+          </p>
+              <h3>HumanEval</h3>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>WizardCoder34B</th>
+                <th>WizardCoder15B</th>
+                <th>CodeGen2.5-Instruct</th>
+                <th>StarCoder</th>
+                <th>Codex002</th>
+                <th>CodeGen16B</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Random</td>
+                <td>59.88</td>
+                <td>45.20</td>
+                <td>26.68</td>
+                <td>32.55</td>
+                <td>37.06</td>
+                <td>22.78</td>
+            </tr>
+            <tr>
+                <td>Greedy</td>
+                <td>68.90</td>
+                <td>50.61</td>
+                <td>28.05</td>
+                <td>39.63</td>
+                <td>47.00</td>
+                <td>29.70</td>
+            </tr>
+            <tr>
+                <td>CodeT</td>
+                <td>72.36</td>
+                <td>58.64</td>
+                <td>56.81</td>
+                <td>50.51</td>
+                <td>65.80</td>
+                <td>36.70</td>
+            </tr>
+            <tr>
+                <td>Coder-Reviewer</td>
+                <td>-</td>
+                <td>49.37</td>
+                <td>45.63</td>
+                <td>38.71</td>
+                <td>66.90</td>
+                <td>42.60</td>
+            </tr>
+            <tr>
+                <td><strong>SRank</strong></td>
+                <td><strong>75.31</strong></td>
+                <td><strong>59.99</strong></td>
+                <td><strong>60.55</strong></td>
+                <td><strong>53.99</strong></td>
+                <td><strong>69.66</strong></td>
+                <td><strong>43.07</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>MBPP-S</h3>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>WizardCoder34B</th>
+                <th>WizardCoder15B</th>
+                <th>CodeGen2.5-Instruct</th>
+                <th>StarCoder</th>
+                <th>Codex002</th>
+                <th>CodeGen16B</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Random</td>
+                <td>54.37</td>
+                <td>45.72</td>
+                <td>34.60</td>
+                <td>39.26</td>
+                <td>47.50</td>
+                <td>31.54</td>
+            </tr>
+            <tr>
+                <td>Greedy</td>
+                <td>60.42</td>
+                <td>51.29</td>
+                <td>42.86</td>
+                <td>45.90</td>
+                <td>58.10</td>
+                <td>42.40</td>
+            </tr>
+            <tr>
+                <td>CodeT</td>
+                <td>63.39</td>
+                <td>58.18</td>
+                <td>55.02</td>
+                <td>58.05</td>
+                <td>67.70</td>
+                <td>49.50</td>
+            </tr>
+            <tr>
+                <td>Coder-Reviewer</td>
+                <td>-</td>
+                <td>52.52</td>
+                <td>52.74</td>
+                <td>49.48</td>
+                <td>64.70</td>
+                <td>50.30</td>
+            </tr>
+            <tr>
+                <td><strong>SRank</strong></td>
+                <td><strong>64.14</strong></td>
+                <td><strong>59.01</strong></td>
+                <td><strong>57.02</strong></td>
+                <td><strong>58.38</strong></td>
+                <td><strong>69.25</strong></td>
+                <td><strong>51.03</strong></td>
+            </tr>
+        </tbody>
+    </table>
+          <p>
+            These results demonstrate the effectiveness of SRank in improving the accuracy of code generation across various CodeLLMs.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Conclusion</h2>
+        <div class="content has-text-justified">
+          <p>
+            We propose SRank, a novel reranking strategy designed to extract optimal code generation solutions from CodeLLMs.
+            By modeling the relationships between clusters of code solutions, 
+            we can more effectively identify the best solutions and improve the overall accuracy of code generation. 
+            We showcase the state-of-the-art performance of SRank on pass@1 across various well-known CodeLLMs, 
+            surpassing other ranking methods like CodeT and Coder-Reviewer in extensive evaluations.
+          </p>
+          <p>
+            We believe that SRank will be a valuable tool for developers, researchers, 
+            and anyone who uses code generation in their work. 
+            We are excited to see how this technology will be used to improve the way we write and interact with code.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{to2024functional,
+  author     = {Hung Quoc To and Minh Huynh Nguyen and Nghi D. Q. Bui},
+  title      = {Functional Overlap Reranking for Neural Code Generation},
+  journal = {ACL},
+  year       = {2024},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+          href="https://arxiv.org/pdf/2311.03366">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/quochungto" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
