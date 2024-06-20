@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="RepoExec: Evaluate Code Generation with a Repository-Level Executable Benchmark">
+  <meta property="og:title" content="RepoExec: Evaluate Code Generation with a Repository-Level Executable Benchmark"/>
+  <meta property="og:description" content="Benchmark for Repository-Level Code Generation, focus on Executability, Correctness from Test Cases and Usage of Contexts from Cross-file Dependencies"/>
+  <meta property="og:url" content="https://fsoft-ai4code.github.io/repoexec/"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>RepoExec: Evaluate Code Generation with a Repository-Level Executable Benchmark</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+    }
+    th[colspan="2"] {
+        border-bottom: 2px solid black;
+    }
+    .highlight {
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">RepoExec: Evaluate Code Generation with a Repository-Level Executable Benchmark</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Nam Le Hai</a>,</span>
+                <span class="author-block">
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Dung Nguyen Manh</a>,</span>
+                  <span class="author-block">
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Nghi D. Q. Bui</a>,
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">FPT Software AI Center, Viet Nam</span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://github.com/FSoft-AI4Code/RepoExec/blob/master/paper/main.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- Supplementary PDF link -->
+                    <!-- <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/FSoft-AI4Code/RepoExec" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/html/2406.11927v1" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/demo.gif" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+      </h2>
+    </div>
+  </div>
+</section> -->
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The ability of CodeLLMs to generate executable and functionally correct code at the *repository-level scale* remains largely unexplored. We introduce RepoExec, a novel benchmark for evaluating code generation at the repository-level scale. RepoExec focuses on three main aspects: executability, functional correctness through automated test case generation with high coverage rate, and carefully crafted cross-file contexts to accurately generate code. Our work explores a controlled scenario where developers specify necessary code dependencies, challenging the model to integrate these accurately. Experiments show that while pretrained LLMs outperform instruction-tuned models in correctness, the latter excel in utilizing provided dependencies and demonstrating debugging capabilities. We also introduce a new instruction-tuned dataset that focuses on code dependencies and demonstrate that CodeLLMs fine-tuned on our dataset have a better capability to leverage these dependencies effectively. RepoExec aims to provide a comprehensive evaluation of code functionality and alignment with developer intent, paving the way for more reliable and applicable CodeLLMs in real-world scenarios. The dataset and source code can be found at https://github.com/FSoft-AI4Code/RepoExec.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            AgileCoder integrates Agile Methodology into a multi-agent system framework, enabling a collaborative environment where software agents assume specific Agile roles such as Product Manager, Scrum Master, Developer, Senior Developer, and Tester. These agents work together to develop software efficiently and iteratively, simulating a dynamic and adaptive software development team.
+          </p>
+          <p>
+            In AgileCoder, each agent is not just a participant but a stakeholder in the software development process, engaging in sprints that mimic real-world Agile practices. This setup enhances the adaptability and effectiveness of development workflows, aligning closely with modern software engineering demands. The system is designed to handle the complexities of real-world software projects, supporting incremental development and continuous integration seamlessly.
+          </p>
+          <p>
+            Key Features of AgileCoder:
+            <ul>
+              <li>Dynamic Role Assignment: Agents dynamically assume roles based on the project needs and user inputs, ensuring flexibility and optimal resource utilization.</li>
+              <li>Sprint-Based Development: The framework organizes development tasks into sprints, promoting rapid prototyping and frequent reassessment of project goals.</li>
+              <li>Dynamic Code Graph Generator: This innovative module automatically generates and updates a dependency graph whenever the codebase changes, enhancing the agents’ understanding of the code structure and interdependencies. This feature is crucial for maintaining high accuracy in code generation and modifications.</li>
+            </ul>
+          </p>
+        </div>
+        <img src="static/images/overview.jpg"/>
+      </div>
+    </div>
+  </div>
+
+</section>
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Evaluation</h2>
+        <div class="content has-text-justified">
+          <p>
+            We will evaluate the performance of AgileCoder on two types of datasets to assess its effectiveness in generating code for different scenarios:
+            <ul>
+              <li>Competitive Programming: HumanEval and MBPP</li>
+              <li>Complex Software Requirements: We curate a new dataset called ProjectDev, which contains complex software requirements for generating complete software projects. This dataset will be designed to evaluate AgileCoder's ability to handle more intricate and real-world software development scenarios.</li>
+            </ul>
+          </p>
+          <p>Results are as below:</p>
+          <table>
+            <thead>
+              <tr>
+                <th rowspan="2">Category</th>
+                <th rowspan="2"></th>
+                <th rowspan="2">Model</th>
+                <th colspan="2">Dataset Performance</th>
+              </tr>
+              <tr>
+                <th>HumanEval</th>
+                <th>MBPP</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="6">LLMs (prompting)</td>
+                <td></td>
+                <td>CodeGeeX-13B</td>
+                <td>18.9</td>
+                <td>26.9</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>PaLM Coder-540B</td>
+                <td>43.9</td>
+                <td>32.3</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>DeepSeeker-33B-Inst</td>
+                <td>79.3</td>
+                <td>70.0</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>GPT-3.5 Turbo</td>
+                <td>60.3</td>
+                <td>52.2</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Claude 3 Haiku</td>
+                <td>75.9</td>
+                <td>80.4</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>GPT 4</td>
+                <td>80.1</td>
+                <td>80.1</td>
+              </tr>
+              <tr>
+                <td rowspan="7">LLMs-based Agents</td>
+                <td rowspan="3">with GPT-3.5 Turbo</td>
+                <td>ChatDev</td>
+                <td>61.79</td>
+                <td>74.80</td>
+              </tr>
+              <tr>
+                <td>MetaGPT</td>
+                <td>62.80</td>
+                <td>74.73</td>
+              </tr>
+              <tr>
+                <td>AgileCoder</td>
+                <td><b>70.53</b></td>
+                <td><b>80.92</b></td>
+              </tr>
+              <tr>
+                <td rowspan="2">with Claude 3 Haiku</td>
+                <td>ChatDev</td>
+                <td>76.83</td>
+                <td>70.96</td>
+              </tr>
+              <tr>
+                <td>AgileCoder</td>
+                <td><b>79.27</b></td>
+                <td><b>84.31</b></td>
+              </tr>
+              <tr>
+                <td rowspan="2">with GPT 4</td>
+                <td>MetaGPT</td>
+                <td>85.9</td>
+                <td>87.7</td>
+              </tr>
+              <tr>
+                <td>AgileCoder</td>
+                <td><b>90.85</b></td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>ChatDev</th>
+                <th>MetaGPT</th>
+                <th>AgileCoder</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Executability</td>
+                <td>32.79</td>
+                <td>7.73</td>
+                <td class="highlight">57.79</td>
+              </tr>
+              <tr>
+                <td>Entire Running Time (s)</td>
+                <td>120</td>
+                <td class="highlight">48</td>
+                <td>444</td>
+              </tr>
+              <tr>
+                <td>Avg. Time/Sprint (s)</td>
+                <td>-</td>
+                <td>-</td>
+                <td>306</td>
+              </tr>
+              <tr>
+                <td>#Sprints</td>
+                <td>-</td>
+                <td>-</td>
+                <td>1.64</td>
+              </tr>
+              <tr>
+                <td>Token Usage</td>
+                <td>7440</td>
+                <td class="highlight">3029</td>
+                <td>36818</td>
+              </tr>
+              <tr>
+                <td>Expenses (USD)</td>
+                <td>0.12</td>
+                <td class="highlight">0.02</td>
+                <td>0.44</td>
+              </tr>
+              <tr>
+                <td>#Errors</td>
+                <td>6</td>
+                <td>32</td>
+                <td class="highlight">0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- End paper abstract -->
+
+
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Apps Gallery</h2>
+      
+
+      </div>
+
+    </div>
+
+
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/screenshots/1.png" alt="MY ALT TEXT"/>
+        
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/screenshots/2.png" alt="MY ALT TEXT"/>
+        
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/screenshots/3.png" alt="MY ALT TEXT"/>
+        
+     </div>
+     <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/screenshots/4.png" alt="MY ALT TEXT"/>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/screenshots/5.png" alt="MY ALT TEXT"/>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/screenshots/7.png" alt="MY ALT TEXT"/>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/screenshots/8.png" alt="MY ALT TEXT"/>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/screenshots/9.png" alt="MY ALT TEXT"/>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/screenshots/10.png" alt="MY ALT TEXT"/>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/screenshots/11.png" alt="MY ALT TEXT"/>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+
+
+</section>
+
+
+<!-- Youtube video -->
+<!--  -->
+<!-- End youtube video -->
+
+
+<!-- Video carousel -->
+
+<!-- End video carousel -->
+
+
+
+
+
+
+<!-- Paper poster -->
+
+<!--End paper poster -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{nguyen2024agilecoder,
+    title={AgileCoder: Dynamic Collaborative Agents for Software Development based on Agile Methodology},
+    author={Minh Huynh Nguyen and Thang Phan Chau and Phong X. Nguyen and Nghi D. Q. Bui},
+    journal={arXiv preprint arXiv:2406.11912},
+    year={2024}
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
