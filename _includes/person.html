@@ -1,0 +1,57 @@
+<html class="no-js" lang="en">
+
+<head>
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+.column {
+    float: left;
+	padding: 10px;
+}
+
+.left {
+    width: 33%;
+}
+
+.right {
+    width: 67%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+</style>
+</head>
+
+<div class="row">
+	<div class="column left">
+		<img src="/images/teampic/{{z.picture}}" style="width:100%">
+	</div>
+	<div class="column right">
+		<h4><b>{{z.name}}</b> </h4> 
+			 <i>{{z.title}}</i> <br>
+			 <em style="color:blue;"> {{ z.email }} </em>  <br> <br>
+			 {{z.bio}} <br> <br>
+		<!-- {% for lab in z.labels %}
+	    {% if lab.type == "email" %}<a href="mailto:{{lab.email}}"><span style="font-size: 25px; color: Black;"><i class="fas fa-envelope"></i></span> </a> {% endif %}
+	    {% if lab.type == "website" %}<a href="{{lab.website}}"><span style="font-size: 25px; color: Black;"><i class="fas fa-globe"></i></span> </a> {% endif %}
+	    {% if lab.type == "twitter" %}<a href="{{lab.twitter}}"><span style="font-size: 25px; color: Black;"><i class="fab fa-twitter"></i></span></a> {% endif %} 
+	    {% if lab.type == "github" %}<a href="{{lab.github}}"><span style="font-size: 25px; color: Black;"><i class="fab fa-github"></i></span></a> {% endif %} 
+	    {% if lab.type == "cv" %}<a href="/resources/cvs/{{lab.cv}}"><span style="font-size: 25px; color: Black;"><i class="ai ai-cv"></i></span></a> {% endif %} 
+	    {% if lab.type == "orcid" %}<a href="{{lab.orcid}}"><span style="font-size: 25px; color: Black;"><i class="fab fa-orcid"></i></span></a> {% endif %} 
+  	    {% if lab.type == "googlescholar" %}<a href="{{lab.googlescholar}}"><span style="font-size: 25px; color: Black;"><i class="ai ai-google-scholar"></i></span></a> {% endif %} 
+{% endfor %} -->
+	</div>
+</div>
+
+<!-- <link rel="stylesheet" href="/resources/icons/fontawesome-free-5.14.0-web/css/all.css" />
+<link rel="stylesheet" href="/resources/icons/academicons-1.9.0/css/academicons.css" /> -->
+
+</html>

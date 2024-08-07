@@ -1,0 +1,109 @@
+
+- title: "AgileCoder: Dynamic Collaborative Agents for Software Development based on Agile Methodology"
+  image: 
+  description: ""
+  authors: Minh Huynh Nguyen, Thang Phan Chau, Phong X. Nguyen, Nghi D. Q. Bui
+  conference: Preprint
+  link:
+    url: https://github.com/FSoft-AI4Code/AgileCoder
+  highlight: 1
+
+- title: "RepoPilot: Multi-Agent Coding Assistant that Understand Your Codebase"
+  image: 
+  description: ""
+  authors: Huy Nhat Phan, Nghi Bui
+  conference: Preprint
+  link:
+    url: https://github.com/FSoft-AI4Code/RepoPilot/
+  highlight: 1
+
+- title: "RepoHyper: Better Context Retrieval Is All You Need for Repository-Level Code Completion"
+  image: 
+  description: ""
+  authors: Huy N. Phan, Hoang N. Phan, Tien N. Nguyen, Nghi D. Q. Bui
+  conference: Preprint
+  link:
+    url: https://github.com/FSoft-AI4Code/RepoHyper
+  highlight: 1
+
+- title: "RepoExec: Evaluate Code Generation with a Repository-Level Executable Benchmark"
+  image: 
+  description: ""
+  authors: Hai Nam Le, Manh Dung Nguyen, Nghi Bui
+  conference: Preprint
+  link:
+    url: https://github.com/FSoft-AI4Code/RepoExec
+  highlight: 1
+
+- title: "Neural Code Generation Enhancement via Functional Overlap Reranking"
+  image: 
+  description: ""
+  authors: Hung Quoc To, Minh Huynh Nguyen, Nghi Bui 
+  conference: The 62nd Annual Meeting of the Association for Computational Linguistics (ACL 2024), Bangkok, Thailand
+  link:
+    url: https://github.com/FSoft-AI4Code/SRank-CodeRanker
+  highlight: 1
+
+- title: "DocChecker: Bootstrapping Code Large Language Model for Detecting and Resolving Code-Comment Inconsistencies"
+  image: 
+  description: ""
+  authors: Anh T. V. Dau, Jin L. C. Guo, Nghi Bui
+  conference: The 18th Conference of the European Chapter of the Association for Computational Linguistics (EACL 2024), Malta
+  link:
+    url: https://github.com/FSoft-AI4Code/DocChecker
+  highlight: 1
+
+- title: "HierarchyNet: Learning to Summarize Source Code with Heterogeneous Representations"
+  image: 
+  description: ""
+  authors: Minh Nguyen Huynh, Nghi Bui, Truong Son Hy, Long Tran-Thanh, Tien N. Nguyen 
+  conference: The 18th Conference of the European Chapter of the Association for Computational Linguistics (ICSE 2024), Malta.
+  link:
+    url: https://github.com/FSoft-AI4Code/HierarchyNet
+  highlight: 1
+
+- title: "The Vault: A Comprehensive Multilingual Dataset for Advancing Code Understanding and Generation"
+  image: 
+  description: ""
+  authors: Dung Nguyen Manh, Nam Le Hai , Anh Dau, Minh Anh Nguyen, Khanh Nghiem, Jin Guo, Nghi Bui
+  conference: The 2023 Conference on Empirical Methods in Natural Language Processing (EMNLP 2023), Singapore
+  link:
+    url: https://github.com/FSoft-AI4Code/TheVault
+  highlight: 1
+
+- title: "Better Language Models of Code through Self-Improvement"
+  image: 
+  description: ""
+  authors: Hung Quoc To, Nghi Bui, Jin Guo, Tien N. Nguyen 
+  conference: The 61st Annual Meeting of the Association for Computational Linguistics (ACL 2023), Toronto, Canada
+  link:
+    url: https://github.com/Fsoft-AIC/Code-LM-Self-Improvement
+  highlight: 1
+
+- title: "Towards Using Data-Centric Approach for Better Code Representation Learning"
+  image: 
+  description: ""
+  authors: Anh Dau, Thang Nguyen-Duc, Hoang Thanh-Tung, Nghi Bui
+  conference: The 37th IEEE/ACM International Conference on Automated Software Engineering (ASE 2022), Michigan, United States
+  link:
+    url: https://dl.acm.org/doi/abs/10.1145/3551349.3561168
+  highlight: 1
+
+- title: "Envisioning the Next-Generation AI Coding Assistants: Insights & Proposals"
+  image: 
+  description: ""
+  authors: Khanh Nghiem, Minh Anh Nguyen, Nghi Bui
+  conference: The 1st IDE workshop (ICSE 2024), Lisbon, Portugal
+  link:
+    url: https://arxiv.org/abs/2403.14592
+  highlight: 1
+
+
+- title: "Dopamin: Transformer-based Comment Classifiers through Domain Post-Training and Multi-level Layer Aggregation"
+  image: 
+  description: ""
+  authors: Nam Le Hai, Nghi Bui
+  conference: The 3rd Intl. Workshop on NL-based Software Engineering (ICSE 2024), Lisbon, Portugal
+  link:
+    url: https://github.com/FSoft-AI4Code/Dopamin
+  highlight: 1

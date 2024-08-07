@@ -1,0 +1,94 @@
+- name: To Quoc Hung
+  photo: hungtq.jpeg
+  info: AI Resident Batch 2, started Nov 2021
+  email: hungtq29@fpt.com
+  number_educ: 1
+  education1: BSc, Foreign Trade University of Vietnam
+
+- name: Dau Thi Van Anh
+  photo: anhdtv.jpg
+  info: AI Resident Batch 2, started Nov 2021
+  email: anhdtv7@fpt.com
+  number_educ: 2
+  education1: MSc, Concordia University
+  education2: B.Eng, Hanoi University of Science and Technology
+
+- name: Nguyen Huynh Minh
+  photo: minhnh.jpeg
+  info: AI Resident Batch 2, started Nov 2021
+  email: minhnh46@fpt.com
+  number_educ: 1
+  education1: B.Eng, Ho Chi Minh City University of Technology
+
+- name: Nguyen Manh Dung
+  photo: dungnm.jpg
+  info: AI Resident Batch 3, started Jul 2022
+  email: dungnm31@fpt.com
+  number_educ: 1
+  education1: B.Eng, Hanoi University of Engineering and Technology
+  education2: 
+  education3: 
+
+- name: Le Hai Nam
+  photo: namlh.jpg
+  info: AI Resident Batch 3, started Jul 2022
+  email: namlh35@fpt.com
+  number_educ: 3
+  education1: PhD, Hanoi University of Science and Technology
+  education2: MSc, Hanoi University of Science and Technology
+  education3: B.Eng, Hanoi University of Science and Technology
+
+- name: Dao Trung Hieu
+  photo: hieudt.jpeg
+  info: AI Resident Batch 3, started Jul 2022
+  email: hieudt47@fpt.com
+  number_educ: 1
+  education1: B.Eng, Hanoi University of Science and Technology
+  education2: 
+  education3:
+  education4:
+
+- name: Phan Nhat Huy
+  photo: huypn.jpg
+  info: AI Resident Batch 4, started Aug 2023
+  email: huypn16@fpt.com
+  number_educ: 1
+  education1: B.Eng, Vin University
+  education2: 
+
+
+- name: Le Chi Cuong
+  photo: cuonglc.jpg
+  info: AI Resident Batch 5, started Jun 2024
+  email: cuonglc4@fpt.com
+  number_educ: 1
+  education1: Undergraduate, Vin University
+  education2: 
+  education3:
+  education4:
+
+- name: Dinh Ho Gia Bao
+  photo: baodhg.jpeg
+  info: AI Resident Batch 5, started Jun 2024
+  email: baodhg2@fpt.com
+  number_educ: 1
+  education1: B.Eng, Ho Chi Minh City University of Science
+  education2: 
+  education3:
+  education4:
+
+- name: Phan Chau Thang
+  photo: thangpc.jpeg
+  info: AI Resident Batch 5, started Jun 2024
+  email: thangpc13@fpt.com
+  number_educ: 1
+  education1: B.Eng, VNU-HCM University of Information Technology
+  education2: 
+
+- name: Chau Thi Thanh Truc
+  photo: trucctt.png
+  info: AI Resident Batch 5, started Jun 2024
+  email: trucctt@fpt.com
+  number_educ: 1
+  education1: B.Eng, VNU-HCM International University 
+  education2:
