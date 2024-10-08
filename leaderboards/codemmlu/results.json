@@ -1,5 +1,5 @@
 {
-    "CodeLlama-34B-Python": {
+    "CodeLlama-34B-Instruct": {
         "link": "https://huggingface.co/codellama/CodeLlama-34b-hf",
         "open-data": "None",
         "pass@1": {

@@ -9,12 +9,12 @@
 
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="RepoExec: Evaluate Code Generation with a Repository-Level Executable Benchmark">
-    <meta property="og:title" content="RepoExec: Evaluate Code Generation with a Repository-Level Executable Benchmark"/>
-    <meta property="og:description" content="Benchmark for Repository-Level Code Generation, focus on Executability, Correctness from Test Cases and Usage of Contexts from Cross-file Dependencies"/>
+    <meta name="description" content="CodeMMLU: A Multi-Task Benchmark for Assessing Code Understanding Capabilities of CodeLLMs">
+    <meta property="og:title" content="CodeMMLU: A Multi-Task Benchmark for Assessing Code Understanding Capabilities of CodeLLMs"/>
+    <meta property="og:description" content="A Multi-Task Benchmark for Assessing Code Understanding Capabilities"/>
     <meta property="og:url" content="https://fsoft-ai4code.github.io/leaderboards/codemmlu"/>
 
-    <title>RepoExec Leaderboard</title>
+    <title>CodeMMLU Leaderboard</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>
     <link
@@ -111,7 +111,7 @@
         <br/></small>
       </h3>
       <div class="d-flex flex-row justify-content-center gap-3">
-        <a href="https://fsoft-ai4code.github.io/repoexec/"
+        <a href="https://fsoft-ai4code.github.io/codemmlu/"
           ><img
             src="https://custom-icon-badges.demolab.com/badge/WebPage-1a4f76?style=for-the-badge&logo=web"
             alt="blog"
@@ -153,8 +153,8 @@
           checked
         />
         <label class="btn btn-outline-primary" for="Complete">Complete</label>
-        <input type="radio" class="btn-check" name="btnradio" id="Instruct" />
-        <label class="btn btn-outline-primary" for="Instruct">Instruct</label>
+        <!-- <input type="radio" class="btn-check" name="btnradio" id="Instruct" />
+        <label class="btn btn-outline-primary" for="Instruct">Instruct</label> -->
       </div>
       <div class="form-check form-switch mt-3">
         <input class="form-check-input" type="checkbox" id="toggleUnknownSize">
@@ -473,7 +473,7 @@
         ],
       };
 
-      const theaders = ["Model", "Pass@1"];
+      const theaders = ["Model", "Accuracy"];
 
       // score: 'complete', 'instruct'
       const displayTable = (table, score) => {
@@ -670,7 +670,7 @@
       };
 
       const completeRadio = document.getElementById("Complete");
-      const instructRadio = document.getElementById("Instruct");
+      //const instructRadio = document.getElementById("Instruct");
 
       completeRadio.addEventListener("click", function () {
         clearTable();
@@ -679,12 +679,12 @@
         displayChart("complete", toggleUnknownSize.checked);
       });
 
-      instructRadio.addEventListener("click", function () {
-        clearTable();
-        displayTable(originTable, "instruct");
-        clearChart();
-        displayChart("instruct", toggleUnknownSize.checked);
-      });
+      // instructRadio.addEventListener("click", function () {
+      //   clearTable();
+      //   displayTable(originTable, "instruct");
+      //   clearChart();
+      //   displayChart("instruct", toggleUnknownSize.checked);
+      // });
 
       toggleUnknownSize.addEventListener("change", function () {
         const score = completeRadio.checked ? "complete" : "instruct";
