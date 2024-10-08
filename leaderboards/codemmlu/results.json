@@ -1,0 +1,132 @@
+{
+    "CodeLlama-34B-Python": {
+        "link": "https://huggingface.co/codellama/CodeLlama-34b-hf",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 41.7
+        },
+        "prompted": false,
+        "size": 34,
+        "direct_complete": true,
+        "lazy": false,
+        "elo_mle": 942
+    },
+    "CodeLlama-13B-Python": {
+        "link": "https://huggingface.co/codellama/CodeLlama-13b-hf",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 40.0
+        },
+        "prompted": false,
+        "size": 13,
+        "direct_complete": true,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "CodeQwen1.5-7B": {
+        "link": "https://huggingface.co/Qwen/CodeQwen1.5-7B",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 31.8
+        },
+        "prompted": false,
+        "size": 7,
+        "direct_complete": true,
+        "lazy": false,
+        "elo_mle": 1056
+    },
+    "DeepSeek-Coder-33B-Base": {
+        "link": "https://huggingface.co/deepseek-ai/deepseek-coder-33b-base",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 33.5
+        },
+        "prompted": false,
+        "size": 33,
+        "direct_complete": true,
+        "lazy": false,
+        "elo_mle": 1064
+    },
+    "StarCoder2-15B": {
+        "link": "https://huggingface.co/bigcode/starcoder2-15b",
+        "open-data": "Full",
+        "pass@1": {
+            "instruct": null,
+            "complete": 28.2
+        },
+        "prompted": false,
+        "size": 15,
+        "direct_complete": true,
+        "lazy": false,
+        "elo_mle": 960
+    },
+    "DeepSeek-Coder-6.7B-Base": {
+        "link": "https://huggingface.co/deepseek-ai/deepseek-coder-6.7b-base",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 28.4
+        },
+        "prompted": false,
+        "size": 6.7,
+        "direct_complete": true,
+        "lazy": false,
+        "elo_mle": 1002
+    },
+    "DeepSeek-Coder-33B-Instruct": {
+        "link": "https://huggingface.co/deepseek-ai/deepseek-coder-33b-instruct",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 33.5
+        },
+        "prompted": true,
+        "size": 33,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 1129
+    },
+    "Yi-1.5-34B": {
+        "link": "https://huggingface.co/01-ai/Yi-1.5-34B",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 34.9
+        },
+        "prompted": false,
+        "size": 34,
+        "direct_complete": true,
+        "lazy": false,
+        "elo_mle": 978
+    },
+    "OpenCodeInterpreter-DS-33B": {
+        "link": "https://huggingface.co/m-a-p/OpenCodeInterpreter-DS-33B",
+        "open-data": "Partial",
+        "pass@1": {
+            "instruct": null,
+            "complete": 31.0
+        },
+        "prompted": true,
+        "size": 33,
+        "direct_complete": true,
+        "lazy": false,
+        "elo_mle": 1131
+    },
+    "To be updated": {
+        "link": "",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 0
+        },
+        "prompted": false,
+        "size": 15,
+        "direct_complete": true,
+        "lazy": false,
+        "elo_mle": 960
+    }
+}
