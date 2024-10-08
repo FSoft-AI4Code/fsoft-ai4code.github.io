@@ -280,20 +280,20 @@
             "complete": 67
         },
         "prompted": true,
-        "size": "None",
+        "size": null,
         "direct_complete": false,
         "lazy": false,
         "elo_mle": 874
     },
     "GPT-3.5-turbo-0613": {
         "link": "",
-        "open-data": "None",
+        "open-data": null,
         "pass@1": {
             "instruct": null,
             "complete": 51.7
         },
         "prompted": true,
-        "size": "None",
+        "size": null,
         "direct_complete": false,
         "lazy": false,
         "elo_mle": 874

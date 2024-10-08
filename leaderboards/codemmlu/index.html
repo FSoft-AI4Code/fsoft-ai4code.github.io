@@ -123,9 +123,9 @@
             alt="leaderboard"
             class="img-fluid"
         /></a>
-        <a href="https://huggingface.co/datasets/Fsoft-AIC/RepoExec"
+        <a href=""
           ><img
-            src="https://img.shields.io/badge/%F0%9F%A4%97%20Datasets-RepoExec-f9a602?style=for-the-badge"
+            src="https://img.shields.io/badge/%F0%9F%A4%97%20Datasets-CodeMMLU-f9a602?style=for-the-badge"
             alt="data"
             class="img-fluid"
         /></a>
@@ -542,24 +542,24 @@
           var prompted = row["prompted"];
           var opendata = row["open-data"];
           var lazy = row["lazy"];
-          if (prompted) {
-            // add a symbol to indicate the model is prompted
-            var promptedSymbol = document.createElement("span");
-            promptedSymbol.textContent = "✨";
-            modelCell.appendChild(promptedSymbol);
-          }
-          if (opendata.toUpperCase() == "FULL") {
-            // add a symbol to indicate the model is fully open-sourced
-            var promptedSymbol = document.createElement("span");
-            promptedSymbol.textContent = "💚";
-            modelCell.appendChild(promptedSymbol);
-          } else if (opendata.toUpperCase() == "PARTIAL") {
-            // add a symbol to indicate the model is partially open-sourced
-            // i.e., a subset of the model implementation is close-sourced
-            var promptedSymbol = document.createElement("span");
-            promptedSymbol.textContent = "💙";
-            modelCell.appendChild(promptedSymbol);
-          }
+          // if (prompted) {
+          //   // add a symbol to indicate the model is prompted
+          //   var promptedSymbol = document.createElement("span");
+          //   promptedSymbol.textContent = "✨";
+          //   modelCell.appendChild(promptedSymbol);
+          // }
+          // if (opendata.toUpperCase() == "FULL") {
+          //   // add a symbol to indicate the model is fully open-sourced
+          //   var promptedSymbol = document.createElement("span");
+          //   promptedSymbol.textContent = "💚";
+          //   modelCell.appendChild(promptedSymbol);
+          // } else if (opendata.toUpperCase() == "PARTIAL") {
+          //   // add a symbol to indicate the model is partially open-sourced
+          //   // i.e., a subset of the model implementation is close-sourced
+          //   var promptedSymbol = document.createElement("span");
+          //   promptedSymbol.textContent = "💙";
+          //   modelCell.appendChild(promptedSymbol);
+          // }
           dataRow.appendChild(modelCell);
           var passCell = document.createElement("td");
           passCell.classList.add("text-nowrap");
