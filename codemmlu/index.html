@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="CodeMMLU: A Multi-Task Benchmark for Assessing Code Understanding Capabilities of CodeLLMs">
+  <meta property="og:title" content="CodeMMLU: A Multi-Task Benchmark for Assessing Code Understanding Capabilities of CodeLLMs"/>
+  <meta property="og:description" content="Multiple Choice QA Benchmark for Assessing Code Understanding Capabilities"/>
+  <meta property="og:url" content="https://fsoft-ai4code.github.io/codemmlu/"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>CodeMMLU: A Multi-Task Benchmark for Assessing Code Understanding Capabilities of CodeLLMs</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+  <link rel="icon" href="static/images/repoexec_logo.png">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+    }
+    th[colspan="2"] {
+        border-bottom: 2px solid black;
+    }
+    .highlight {
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="https://fsoft-ai4code.github.io/repoexec/">
+        <span class="icon">
+            <i class="fas fa-home"></i>
+        </span>
+        </a>
+        
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://fsoft-ai4code.github.io/repoexec/">
+              RepoExec
+            </a>
+            <a class="navbar-item" href="https://fsoft-ai4code.github.io/agilecoder/">
+              AgileCoder
+            </a>
+            <a class="navbar-item" href="https://fsoft-ai4code.github.io/srank-coderanker/">
+              SRank-CodeRanker
+            </a>
+            <a class="navbar-item" href="https://fsoft-ai4code.github.io/codemmlu/"></a>
+              CodeMMLU
+            </a>
+          </div>
+            
+        </div>
+        
+      </div>
+  
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">CodeMMLU: A Multi-Task Benchmark for Assessing Code Understanding Capabilities of CodeLLMs</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://nmd2k.github.io" target="_blank">Dung Nguyen Manh<sup>1</sup></a>,</span>
+                <span class="author-block">
+                <a href="https://namcyan.github.io" target="_blank">Nam Le Hai<sup>1,3</sup></a>,</span>
+                <span class="author-block">
+                <a href="" target="_blank">Thang Phan Chau<sup>1</sup></a>,</span>
+                <span class="author-block">
+                <a href="" target="_blank">Thong T. Doan<sup>1</sup></a>,</span>
+                <span class="author-block">
+                <a href="" target="_blank">Nam V. Nguyen<sup>1</sup></a>,</span>
+                <span class="author-block">
+                <a href="" target="_blank">Quang Pham<sup>4</sup></a>,</span>
+                <span class="author-block">
+                <a href="https://bdqnghi.github.io" target="_blank">Nghi D. Q. Bui<sup>2</sup></a>
+                </span>
+                </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>1</sup>FPT Software AI Center, <sup>2</sup>Fulbright University, Viet Nam</span>
+                    <span class="author-block"><sup>3</sup>Hanoi University of Science and Technology, Viet Nam</span>
+                    <span class="author-block"><sup>4</sup>VNU-HCM- University of Science, Viet Nam</span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://github.com/FSoft-AI4Code/CodeMMLU/blob/master/paper/main.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- Supplementary PDF link -->
+                    <!-- <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/FSoft-AI4Code/CodeMMLU" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>GitHub</span>
+                  </a>
+                </span>
+
+                  <!-- ArXiv abstract Link -->
+                  <span class="link-block">
+                    <a href="https://arxiv.org/html/2406.11927v1" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                  <!-- Data Link -->
+                  <span class="link-block">
+                    <a href="" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span>&#129303; Dataset</span>
+                  </a>
+                </span>
+
+                <!-- Leaderboard Link -->
+                <span class="link-block">
+                  <a href="https://fsoft-ai4code.github.io/leaderboards/codemmlu/" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span>🏆 Leaderboard</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/demo.gif" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+      </h2>
+    </div>
+  </div>
+</section> -->
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The ability of CodeLLMs to generate executable and functionally correct code at the <i>repository-level scale</i> remains largely unexplored. We introduce RepoExec, a novel benchmark for evaluating code generation at the repository-level scale. RepoExec focuses on three main aspects: executability, functional correctness through automated test case generation with high coverage rate, and carefully crafted cross-file contexts to accurately generate code. Our work explores a controlled scenario where developers specify necessary code dependencies, challenging the model to integrate these accurately. Experiments show that while pretrained LLMs outperform instruction-tuned models in correctness, the latter excel in utilizing provided dependencies and demonstrating debugging capabilities. We also introduce a new instruction-tuned dataset that focuses on code dependencies and demonstrate that CodeLLMs fine-tuned on our dataset have a better capability to leverage these dependencies effectively. RepoExec aims to provide a comprehensive evaluation of code functionality and alignment with developer intent, paving the way for more reliable and applicable CodeLLMs in real-world scenarios. The dataset and source code can be found at <a href="https://github.com/FSoft-AI4Code/RepoExec">https://github.com/FSoft-AI4Code/RepoExec</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            RepoExec is a pioneering benchmark that places a strong emphasis on the executability and correctness of generated code. Unlike traditional benchmarks, RepoExec ensures that the code not only compiles but also performs as intended in real-world scenarios. This is achieved through an automated system that verifies installation and runtime requirements, and dynamically generates high-coverage test cases.
+          </p>
+          <p>
+          </p>
+          <p>
+            <b>Key Features of RepoExec:</b>
+            <ul>
+              <li><b>Enhanced Executability:</b> RepoExec goes beyond match-based evaluation to ensure that the generated code can be executed in real-world environments. This involves verifying that the code can be installed and run, addressing a critical aspect of real-world applicability.</li>
+              <li><b>Dynamic Test Case Generation:</b> One of the standout features of RepoExec is its sophisticated mechanism for generating test cases. These test cases are designed to thoroughly assess the functionality of the generated code, ensuring that it performs the intended tasks correctly.</li>
+              <li><b>Dependency Usage Evaluation:</b> RepoExec evaluates how effectively LLMs utilize code dependencies. This involves analyzing whether the models can accurately integrate and manage external libraries and dependencies, which is crucial for creating functional software at a repository level.</li>
+              <li><b>Dependency Invocation Rate (DIR):</b> A novel metric introduced by RepoExec, the Dependency Invocation Rate measures how frequently and effectively generated code invokes dependencies. This metric provides deeper insights into the integration capabilities of LLMs, highlighting their potential for creating more complex and interconnected software systems.</li>
+            </ul>
+          </p>
+        </div>
+        <figure>
+          <img src="static/images/data_pipeline.png", width="100%"></img>
+          <figcaption><i>Figure 1: Data Processing Pipeline of RepoExec</i></figcaption>
+        </figure>
+        <!-- <embed src="static/images/data_pipeline.pdf" width="100%"/> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Evaluation Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            The experiments conducted using RepoExec have provided several valuable insights into the capabilities of LLMs in code generation:
+            <ul>
+              <li><b>Correctness:</b> Pretrained LLMs have shown a high level of correctness in the code they generate. This means that the code produced by these models is syntactically accurate and adheres to the basic structure expected by programming languages.</li>
+              <li><b>Dependency Management and Debugging:</b> Instruction-tuned models, on the other hand, excel in managing dependencies and debugging. These models have demonstrated a better ability to handle the complexities of integrating external libraries and resolving issues that arise during the execution of the code.</li>
+            </ul>
+          </p>
+        </div>
+        <figure>
+          <img src="static/images/llm_result.png", width="100%">
+          <figcaption><i>Table 1:  Pass@k (k= 1 and 5) and DIR results of various LLMs on RepoExec</i></figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Enhancing Functional Correctness and Dependency Invocation abilities</h2>
+        <div class="content has-text-justified">
+          <p>
+            Two approaches are investigated to enhance the performance of generated code in terms of both functional correctness and dependency invocation.
+            <ul>
+              <li><b>Multi-round Debugging:</b> Leveraging test execution outputs and incorporating self-refinement through multiple rounds can dramatically boost a model's performance in generating accurate code and effectively utilizing dependencies.</li>
+              <figure>
+                <img src="static/images/debug_result.png", width="100%">
+                <figcaption>Figure 2:  Improvement of the performance of several models on RepoExec after 3-round debugging process.</figcaption>
+              </figure>
+              <li><b>Instruction tuning:</b> RepoExec also comes with a valuable instruction-tuning training dataset. The experimental results, highlighted in the table below, clearly demonstrate the effectiveness of this approach with just a single round of generation.</li>
+              <figure>
+                <img src="static/images/instruction_tuning.png", width="100%">
+                <figcaption>Table 2:  Improvement of the performance of several models on RepoExec after instruction tuning.</figcaption>
+              </figure>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+
+<!-- Youtube video -->
+<!--  -->
+<!-- End youtube video -->
+
+
+<!-- Video carousel -->
+
+<!-- End video carousel -->
+
+
+
+
+
+
+<!-- Paper poster -->
+
+<!--End paper poster -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{dung2024codemmlu,
+  title={CodeMMLU: A Multi-Task Benchmark for Assessing Code Understanding Capabilities of CodeLLMs},
+  author={Manh, Dung Nguyen and Chau, Thang Phan and Hai, Nam Le and Doan, Thong T and Nguyen, Nam V and Pham, Quang and Bui, Nghi DQ},
+  journal={arXiv preprint arXiv:2410.01999v1},
+  year={2024}
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content", style="text-align: center;">
+          <img src="static/images/aic_logo.png", width="120px">
+          <p>
+            <h5>Contact us</h5>
+            🌐: <a href="https://www.fpt-aicenter.com/ai-residency/">fpt-aicenter</a>
+            Ⓜ️: support.ailab@fpt.com
+            </ul>
+          </p>
+          <p>
+            <h5>Acknowledgements</h5>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+</body>
+</html>
