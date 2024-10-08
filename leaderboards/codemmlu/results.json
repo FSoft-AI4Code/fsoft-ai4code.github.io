@@ -267,7 +267,7 @@
             "complete": 53.97
         },
         "prompted": true,
-        "size": "None",
+        "size": null,
         "direct_complete": false,
         "lazy": false,
         "elo_mle": 874
