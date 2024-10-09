@@ -47,7 +47,7 @@
       }
 
       #notes {
-        font-size: 1em;
+        font-size: 0.75em;
       }
 
       #notes h3 {
@@ -77,7 +77,7 @@
         }
 
         #content {
-          width: 100%;
+          width: 75%;
         }
 
         h1 {
@@ -96,6 +96,40 @@
           font-size: medium;
         }
       }
+      /* Add this to your existing <style> section */
+        .btn-group-lg > .btn, .btn-lg {
+            padding: 0.5rem 1rem;
+            font-size: 1.25rem;
+            border-radius: 0.3rem;
+        }
+    
+        .btn-outline-hard {
+            color: #ff6b6b;
+            border: 2px solid #ff6b6b;
+            background-color: transparent;
+        }
+    
+        .btn-outline-hard:hover,
+        .btn-check:checked + .btn-outline-hard,
+        .btn-outline-hard:active {
+            color: #fff;
+            background-color: #ff6b6b !important;
+            border-color: #ff6b6b;
+        }
+    
+        .btn-outline-full {
+            color: #4ecdc4;
+            border: 2px solid #4ecdc4;
+            background-color: transparent;
+        }
+    
+        .btn-outline-full:hover,
+        .btn-check:checked + .btn-outline-full,
+        .btn-outline-full:active {
+            color: #fff;
+            background-color: #4ecdc4 !important;
+            border-color: #4ecdc4;
+        }
     </style>
   </head>
 
