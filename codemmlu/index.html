@@ -26,6 +26,7 @@
   <title>CodeMMLU: A Multi-Task Benchmark for Assessing Code Understanding Capabilities of CodeLLMs</title>
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
+  <!-- TODO: replace with CodeMMLU logo -->
   <link rel="icon" href="static/images/repoexec_logo.png">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -172,7 +173,7 @@
 
                   <!-- ArXiv abstract Link -->
                   <span class="link-block">
-                    <a href="https://arxiv.org/html/2406.11927v1" target="_blank"
+                    <a href="https://arxiv.org/abs/2410.01999" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -226,7 +227,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            The ability of CodeLLMs to generate executable and functionally correct code at the <i>repository-level scale</i> remains largely unexplored. We introduce RepoExec, a novel benchmark for evaluating code generation at the repository-level scale. RepoExec focuses on three main aspects: executability, functional correctness through automated test case generation with high coverage rate, and carefully crafted cross-file contexts to accurately generate code. Our work explores a controlled scenario where developers specify necessary code dependencies, challenging the model to integrate these accurately. Experiments show that while pretrained LLMs outperform instruction-tuned models in correctness, the latter excel in utilizing provided dependencies and demonstrating debugging capabilities. We also introduce a new instruction-tuned dataset that focuses on code dependencies and demonstrate that CodeLLMs fine-tuned on our dataset have a better capability to leverage these dependencies effectively. RepoExec aims to provide a comprehensive evaluation of code functionality and alignment with developer intent, paving the way for more reliable and applicable CodeLLMs in real-world scenarios. The dataset and source code can be found at <a href="https://github.com/FSoft-AI4Code/RepoExec">https://github.com/FSoft-AI4Code/RepoExec</a>.
+            Recent advancements in Code Large Language Models (CodeLLMs) have predominantly focused on open-ended code generation tasks, often neglecting the critical aspect of code understanding and comprehension. To bridge this gap, we present CodeMMLU, a comprehensive multiple-choice question-answer benchmark designed to evaluate the depth of software and code understanding in LLMs. CodeMMLU includes over 10,000 questions sourced from diverse domains, encompassing tasks such as code analysis, defect detection, and software engineering principles across multiple programming languages. Unlike traditional benchmarks, CodeMMLU assesses models’ ability to reason about code rather than merely generate it, providing deeper insights into their grasp of complex software concepts and systems. Our extensive evaluation reveals that even state-of-the-art models face significant challenges with CodeMMLU, highlighting deficiencies in comprehension beyond code generation. By underscoring the crucial relationship between code understanding and effective generation, CodeMMLU serves as a vital resource for advancing AI-assisted software development, ultimately aiming to create more reliable and capable coding assistants.
           </p>
         </div>
       </div>
@@ -241,23 +242,33 @@
         <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
           <p>
-            RepoExec is a pioneering benchmark that places a strong emphasis on the executability and correctness of generated code. Unlike traditional benchmarks, RepoExec ensures that the code not only compiles but also performs as intended in real-world scenarios. This is achieved through an automated system that verifies installation and runtime requirements, and dynamically generates high-coverage test cases.
+            We introduce CodeMMLU, a novel benchmark designed to evaluate CodeLLMs' ability to understand and comprehend code through multi-choice question answering (MCQA). This approach enables a deeper assessment of how CodeLLMs grasp coding concepts, moving beyond mere generation capabilities. Inspired by the MMLU dataset from natural language understanding, CodeMMLU offers a robust and easily evaluable methodology with the following key features:
           </p>
           <p>
           </p>
           <p>
-            <b>Key Features of RepoExec:</b>
             <ul>
-              <li><b>Enhanced Executability:</b> RepoExec goes beyond match-based evaluation to ensure that the generated code can be executed in real-world environments. This involves verifying that the code can be installed and run, addressing a critical aspect of real-world applicability.</li>
-              <li><b>Dynamic Test Case Generation:</b> One of the standout features of RepoExec is its sophisticated mechanism for generating test cases. These test cases are designed to thoroughly assess the functionality of the generated code, ensuring that it performs the intended tasks correctly.</li>
-              <li><b>Dependency Usage Evaluation:</b> RepoExec evaluates how effectively LLMs utilize code dependencies. This involves analyzing whether the models can accurately integrate and manage external libraries and dependencies, which is crucial for creating functional software at a repository level.</li>
-              <li><b>Dependency Invocation Rate (DIR):</b> A novel metric introduced by RepoExec, the Dependency Invocation Rate measures how frequently and effectively generated code invokes dependencies. This metric provides deeper insights into the integration capabilities of LLMs, highlighting their potential for creating more complex and interconnected software systems.</li>
+              <li><b>Comprehensiveness:</b> CodeMMLU comprises over 10,000 questions curated from diverse, high-quality sources, mitigating potential bias from limited evaluation data.</li>
+              <li><b>Diversity in task, domain, and language:</b> The dataset covers a wide spectrum of software knowledge, including general QA, code generation, defect detection, and code repair across various domains and more than 10 programming languages.</li>
+            </ul>
+          </p>
+          <p></p>
+          CodeMMLU enables us to assess LLMs’ capabilities in coding and software tasks from a novel perspective, extending beyond traditional code generation and completion. Our analysis reveals several notable findings: (1) previously unexplored bias issues in CodeLLMs, aligning with those observed in natural language MCQA tasks; (2) GPT-4 consistently achieving the highest average performance among closed-source models, while (3) the Meta-Llama family demonstrated the greatest accuracy among open-source models; (4) scaling laws related to model size were partially observed within the same model family but not across different families, suggesting the significant influence of pretraining datasets, methodologies, and model architectures; (5) advanced prompting techniques, such as Chain-of-Thought (CoT), consistently degraded performance, raising concerns about CodeLLMs’ reasoning abilities on complex, step-by-step tasks; and (6) benchmarks like HumanEval, when converted from open-ended code generation to MCQA format, show that LLMs perform worse on MCQA, raising concerns about their real capability to understand and comprehend code. These findings highlight the current shortcomings of CodeLLMs and the intricate relationship between model architecture, training data quality, and evaluation methods in determining performance on software-related tasks.
+          </p>
+          <p>
+          </p>
+          <p>
+            <b>Our key contributions are:</b>
+            <ul>
+              <li>We present the first MCQA benchmark for software and coding-related knowledge, addressing the need for diverse evaluation scenarios in the code domain. CodeMMLU enables the evaluation of LLMs' alignment with human inference in the software knowledge domain, similar to advancements in the NLP field.</li>
+              <li>CodeMMLU provides a thorough assessment of LLM capabilities, ensuring a substantial number of samples and diversity across tasks, domains, and languages. This enables a more nuanced understanding of an LLM's strengths and weaknesses, facilitating the development of models better aligned with the complexities and demands of the software domain.</li>
+              <li>Our experiments offer critical insights into LLM performance, highlighting the impact of factors such as model size, model family, and prompting techniques. This provides essential information to the community on effectively utilizing LLMs for specific tasks and domains in software engineering.</li>
             </ul>
           </p>
         </div>
         <figure>
-          <img src="static/images/data_pipeline.png", width="100%"></img>
-          <figcaption><i>Figure 1: Data Processing Pipeline of RepoExec</i></figcaption>
+          <img src="static/images/data-creation-flow.png", width="100%"></img>
+          <figcaption><i><b>Overview of CodeMMLU data creation pipeline.</b> The blue diagram describe the process of collecting raw multiple-choice questions (MCQs) from open source internet for a knowledge testset. Otherwise, the pipeline of real-world problem indicated in orange area.</i></figcaption>
         </figure>
         <!-- <embed src="static/images/data_pipeline.pdf" width="100%"/> -->
       </div>
@@ -274,16 +285,247 @@
         <h2 class="title is-3">Evaluation Results</h2>
         <div class="content has-text-justified">
           <p>
-            The experiments conducted using RepoExec have provided several valuable insights into the capabilities of LLMs in code generation:
-            <ul>
-              <li><b>Correctness:</b> Pretrained LLMs have shown a high level of correctness in the code they generate. This means that the code produced by these models is syntactically accurate and adheres to the basic structure expected by programming languages.</li>
-              <li><b>Dependency Management and Debugging:</b> Instruction-tuned models, on the other hand, excel in managing dependencies and debugging. These models have demonstrated a better ability to handle the complexities of integrating external libraries and resolving issues that arise during the execution of the code.</li>
-            </ul>
+            CodeMMLU revealed significant performance differences across models, as shown in the table below. OpenAI's GPT-4o outperformed all models on CodeMMLU, demonstrating its quality across diverse tasks. Notably, despite not being the latest model, the instructed version of Meta-Llama-3-70B achieved the highest score among open-source models from 8 families. While LLMs perform well on knowledge-based tasks, they struggle with real-world problems, particularly in defect detection tasks.
+          </p>
+        </div>
+        <div class="content has-text-justified">
+          <style type="text/css">
+            .tg  {border-collapse:collapse;border-color:#ccc;border-spacing:0;}
+            .tg td{background-color:#fff;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
+              font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+            .tg th{background-color:#f0f0f0;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
+              font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+            .tg .tg-baqh{text-align:center;vertical-align:top}
+            .tg .tg-buh4{background-color:#f9f9f9;text-align:left;vertical-align:top}
+            .tg .tg-0lax{text-align:left;vertical-align:top}
+            .tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
+            </style>
+            <table class="tg"><thead>
+              <tr>
+                <th class="tg-0lax"></th>
+                <th class="tg-amwm">Model name</th>
+                <th class="tg-amwm">Size (B)</th>
+                <th class="tg-amwm">Syntactic knowledge</th>
+                <th class="tg-amwm">Semantic knowledge</th>
+                <th class="tg-amwm">Real-world tasks</th>
+                <th class="tg-amwm">CodeMMLU</th>
+              </tr></thead>
+            <tbody>
+              <tr>
+                <td class="tg-baqh" colspan="7">Closed-source models&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">Anthropic</td>
+                <td class="tg-buh4">Claude-3-sonnet@20240229</td>
+                <td class="tg-0lax">-</td>
+                <td class="tg-buh4"><b>67.22</b></td>
+                <td class="tg-0lax"><b>66.08</b></td>
+                <td class="tg-buh4">38.26</td>
+                <td class="tg-0lax">53.97</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh" rowspan="2">OpenAI</td>
+                <td class="tg-buh4">GPT-4o-2024-05-13</td>
+                <td class="tg-0lax">-</td>
+                <td class="tg-buh4">60.41</td>
+                <td class="tg-0lax">57.82</td>
+                <td class="tg-buh4"><b>77.18</b></td>
+                <td class="tg-0lax"><b>67.0</b></td>
+              </tr>
+              <tr>
+                <td class="tg-buh4">GPT-3.5-turbo-0613</td>
+                <td class="tg-0lax">-</td>
+                <td class="tg-buh4">61.68</td>
+                <td class="tg-0lax">53.64</td>
+                <td class="tg-buh4">45.26</td>
+                <td class="tg-0lax">51.7</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax" colspan="7">Open-source models&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh" rowspan="5">Meta Llama</td>
+                <td class="tg-buh4">CodeLlama-34b-Instruct-hf</td>
+                <td class="tg-0lax">34</td>
+                <td class="tg-buh4">56.81</td>
+                <td class="tg-0lax">46.93</td>
+                <td class="tg-buh4">23.55</td>
+                <td class="tg-0lax">38.73</td>
+              </tr>
+              <tr>
+                <td class="tg-buh4">Meta-Llama-3-70B</td>
+                <td class="tg-0lax">70</td>
+                <td class="tg-buh4">63.38</td>
+                <td class="tg-0lax">57.64</td>
+                <td class="tg-buh4">35.29</td>
+                <td class="tg-0lax">48.98</td>
+              </tr>
+              <tr>
+                <td class="tg-buh4">Meta-Llama-3-70B-Instruct</td>
+                <td class="tg-0lax">70</td>
+                <td class="tg-buh4"><b>64.90</b></td>
+                <td class="tg-0lax"><b>62.96</b></td>
+                <td class="tg-buh4"><b>60.84</b></td>
+                <td class="tg-0lax"><b>62.45</b></td>
+              </tr>
+              <tr>
+                <td class="tg-buh4">Meta-Llama-3.1-70B</td>
+                <td class="tg-0lax">70</td>
+                <td class="tg-buh4">64.09</td>
+                <td class="tg-0lax">59.00</td>
+                <td class="tg-buh4">8.22</td>
+                <td class="tg-0lax">37.56</td>
+              </tr>
+              <tr>
+                <td class="tg-buh4">Meta-Llama-3.1-70B-Instruct</td>
+                <td class="tg-0lax">70</td>
+                <td class="tg-buh4">64.42</td>
+                <td class="tg-0lax">62.25</td>
+                <td class="tg-buh4">56.11</td>
+                <td class="tg-0lax">60</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh" rowspan="3">Mistral</td>
+                <td class="tg-buh4">Mistral-7B-Instruct-v0.3</td>
+                <td class="tg-0lax">7</td>
+                <td class="tg-buh4">54.42</td>
+                <td class="tg-0lax">51.25</td>
+                <td class="tg-buh4">31.85</td>
+                <td class="tg-0lax">43.33</td>
+              </tr>
+              <tr>
+                <td class="tg-buh4">Mixtral-8x7B-Instruct-v0.1</td>
+                <td class="tg-0lax">46.7</td>
+                <td class="tg-buh4">61.17</td>
+                <td class="tg-0lax">54.89</td>
+                <td class="tg-buh4">24.90</td>
+                <td class="tg-0lax">42.96</td>
+              </tr>
+              <tr>
+                <td class="tg-buh4">Codestral-22B-v0.1</td>
+                <td class="tg-0lax">22</td>
+                <td class="tg-buh4">60.34</td>
+                <td class="tg-0lax">52.11</td>
+                <td class="tg-buh4">37.86</td>
+                <td class="tg-0lax">47.6</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh" rowspan="2">Phi</td>
+                <td class="tg-buh4">Phi-3-medium-128k-instruct</td>
+                <td class="tg-0lax">14</td>
+                <td class="tg-buh4">58.54</td>
+                <td class="tg-0lax">54.56</td>
+                <td class="tg-buh4">37.89</td>
+                <td class="tg-0lax">48.03</td>
+              </tr>
+              <tr>
+                <td class="tg-buh4">Phi-3-mini-128k-instruct</td>
+                <td class="tg-0lax">3.8</td>
+                <td class="tg-buh4">53.01</td>
+                <td class="tg-0lax">48.65</td>
+                <td class="tg-buh4">22.36</td>
+                <td class="tg-0lax">37.93</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh" rowspan="2">Qwen</td>
+                <td class="tg-buh4">Qwen2-57B-A14B-Instruct</td>
+                <td class="tg-0lax">57</td>
+                <td class="tg-buh4">61.34</td>
+                <td class="tg-0lax">57.48</td>
+                <td class="tg-buh4">30.48</td>
+                <td class="tg-0lax">46.34</td>
+              </tr>
+              <tr>
+                <td class="tg-buh4">CodeQwen1.5-7B-Chat</td>
+                <td class="tg-0lax">7</td>
+                <td class="tg-buh4">49.66</td>
+                <td class="tg-0lax">46.58</td>
+                <td class="tg-buh4">56.37</td>
+                <td class="tg-0lax">49.82</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh" rowspan="2">Yi</td>
+                <td class="tg-buh4">Yi-1.5-34B-Chat</td>
+                <td class="tg-0lax">34</td>
+                <td class="tg-buh4">58.32</td>
+                <td class="tg-0lax">55.59</td>
+                <td class="tg-buh4">40.27</td>
+                <td class="tg-0lax">49.39</td>
+              </tr>
+              <tr>
+                <td class="tg-buh4">Yi-1.5-9B-Chat</td>
+                <td class="tg-0lax">9</td>
+                <td class="tg-buh4">55.64</td>
+                <td class="tg-0lax">55.06</td>
+                <td class="tg-buh4">37.15</td>
+                <td class="tg-0lax">47.23</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh" rowspan="4">Deep Seek</td>
+                <td class="tg-buh4">DeepSeek-coder-7b-instruct-v1.5</td>
+                <td class="tg-0lax">7</td>
+                <td class="tg-buh4">56.67</td>
+                <td class="tg-0lax">47.90</td>
+                <td class="tg-buh4">28.46</td>
+                <td class="tg-0lax">41.21</td>
+              </tr>
+              <tr>
+                <td class="tg-buh4">DeepSeek-coder-33b-instruct</td>
+                <td class="tg-0lax">33</td>
+                <td class="tg-buh4">53.65</td>
+                <td class="tg-0lax">46.11</td>
+                <td class="tg-buh4">21.47</td>
+                <td class="tg-0lax">36.6</td>
+              </tr>
+              <tr>
+                <td class="tg-buh4">DeepSeek-moe-16b-chat</td>
+                <td class="tg-0lax">16.4</td>
+                <td class="tg-buh4">31.74</td>
+                <td class="tg-0lax">35.43</td>
+                <td class="tg-buh4">27.33</td>
+                <td class="tg-0lax">31.01</td>
+              </tr>
+              <tr>
+                <td class="tg-buh4">DeepSeek-Coder-V2-Lite-Instruct</td>
+                <td class="tg-0lax">16</td>
+                <td class="tg-buh4">59.91</td>
+                <td class="tg-0lax">54.76</td>
+                <td class="tg-buh4">33.62</td>
+                <td class="tg-0lax">46.51</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">InternLM</td>
+                <td class="tg-buh4">InternLM2-5-20b-chat</td>
+                <td class="tg-0lax">20</td>
+                <td class="tg-buh4">57.85</td>
+                <td class="tg-0lax">55.51</td>
+                <td class="tg-buh4">30.44</td>
+                <td class="tg-0lax">44.89</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">StarCoder2</td>
+                <td class="tg-buh4">StarCoder2-15b-instruct-v0.1</td>
+                <td class="tg-0lax">15</td>
+                <td class="tg-buh4">56.58</td>
+                <td class="tg-0lax">49.07</td>
+                <td class="tg-buh4">42.79</td>
+                <td class="tg-0lax">47.94</td>
+              </tr>
+            </tbody></table>
+            <figcaption><i><b>Summary performance of LLM family on CodeMMLU.</b>The evaluation results (accuracy %) of different language models across CodeMMLU task.</i></figcaption>
+        </div>
+        <!-- <figure>
+          <img src="static/images/llm_result.png", width="100%">
+          <figcaption><i>Table 1:  Pass@k (k= 1 and 5) and DIR results of various LLMs on RepoExec</i></figcaption>
+        </figure> -->
+        <div class="content has-text-justified">
+          <p>
+            For more benchmark detail, please check <a href="https://fsoft-ai4code.github.io/leaderboards/codemmlu/">👉 HERE 👈</a>
           </p>
         </div>
         <figure>
-          <img src="static/images/llm_result.png", width="100%">
-          <figcaption><i>Table 1:  Pass@k (k= 1 and 5) and DIR results of various LLMs on RepoExec</i></figcaption>
+          <img src="static/images/task_detail.png", width="100%"></img>
+          <figcaption><i><b>CodeMMLU accuracy by task on LLMs.</b> While knowledge tasks are following the scaling law, real-world tasks offer more challenges to LLMs which indicate the performance of instruction tuning and data quality when evaluating on CodeMMLU.</i></figcaption>
         </figure>
       </div>
     </div>
@@ -292,7 +534,7 @@
 </section>
 
 
-<section class="section hero is-light">
+<!-- <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -317,7 +559,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End paper abstract -->
 
 
