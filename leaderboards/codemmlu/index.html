@@ -19,7 +19,7 @@
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>
     <link
       rel="icon"
-      href=""
+      href="images/codemmlu-logo.png"
     />
     <link
       rel="stylesheet"
@@ -501,7 +501,7 @@
         ],
       };
 
-      const theaders = ["Model", "Accuracy"];
+      const theaders = ["Model", "Syntactic Accuracy", "Semantic Accuracy", "Real-task Accuracy", "CodeMMLU"];
 
       // score: 'complete', 'instruct'
       const displayTable = (table, score) => {
@@ -524,7 +524,7 @@
         theaders.forEach(function (header) {
           var th = document.createElement("th");
           th.textContent = header;
-          if (header == "Pass@1") {
+          if (header == "CodeMMLU") {
             th.style.backgroundColor = "#EEFFEE";
           }
           headerRow.appendChild(th);
@@ -588,7 +588,24 @@
           //   promptedSymbol.textContent = "💙";
           //   modelCell.appendChild(promptedSymbol);
           // }
+
+          // Add Syntactic Accuracy column
+          
+          
           dataRow.appendChild(modelCell);
+
+          var syntacticCell = document.createElement("td");
+          syntacticCell.textContent = row["syntactic_accuracy"] || "-";
+          dataRow.appendChild(syntacticCell);
+
+          var semanticCell = document.createElement("td");
+          semanticCell.textContent = row["semantic_accuracy"] || "-";
+          dataRow.appendChild(semanticCell);
+
+          var rtaskCell = document.createElement("td");
+          rtaskCell.textContent = row["realtask_accuracy"] || "-";
+          dataRow.appendChild(rtaskCell);
+
           var passCell = document.createElement("td");
           passCell.classList.add("text-nowrap");
           if (lazy) {
