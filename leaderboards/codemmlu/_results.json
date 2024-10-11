@@ -1,0 +1,301 @@
+{
+    "CodeLlama-34B-Instruct": {
+        "link": "https://huggingface.co/codellama/CodeLlama-34b-hf",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 38.73
+        },
+        "prompted": true,
+        "size": 34,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 942
+    },
+    "Meta-Llama-3-70B": {
+        "link": "https://huggingface.co/meta-llama/Meta-Llama-3-70B",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 48.98
+        },
+        "prompted": false,
+        "size": 70,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Meta-Llama-3-70B-Instruct": {
+        "link": "https://huggingface.co/meta-llama/Meta-Llama-3-70B-Instruct",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 62.45
+        },
+        "prompted": true,
+        "size": 70,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Meta-Llama-3.1-70B-Instruct": {
+        "link": "https://huggingface.co/meta-llama/Llama-3.1-70B-Instruct",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 60
+        },
+        "prompted": true,
+        "size": 70,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Meta-Llama-3.1-70B": {
+        "link": "https://huggingface.co/meta-llama/Llama-3.1-70B",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 37.56
+        },
+        "prompted": false,
+        "size": 70,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Mistral-7B-Instruct-v0.3": {
+        "link": "https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 43.33
+        },
+        "prompted": true,
+        "size": 7,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Mixtral-8x7B-Instruct-v0.1": {
+        "link": "https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 42.96
+        },
+        "prompted": true,
+        "size": 7,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Codestral-22B-v0.1": {
+        "link": "https://huggingface.co/mistralai/Codestral-22B-v0.1",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 47.6
+        },
+        "prompted": true,
+        "size": 22,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Phi-3-medium-128k-instruct": {
+        "link": "https://huggingface.co/microsoft/Phi-3-medium-128k-instruct",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 48.03
+        },
+        "prompted": true,
+        "size": 14,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Phi-3-mini-128k-instruct": {
+        "link": "https://huggingface.co/microsoft/Phi-3-mini-128k-instruct",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 37.93
+        },
+        "prompted": true,
+        "size": 3.8,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Qwen2-57B-A14B-Instruct": {
+        "link": "https://huggingface.co/Qwen/Qwen2-57B-A14B-Instruct",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 46.34
+        },
+        "prompted": true,
+        "size": 57,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "CodeQwen1.5-7B-Chat": {
+        "link": "https://huggingface.co/Qwen/CodeQwen1.5-7B-Chat",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 49.82
+        },
+        "prompted": true,
+        "size": 7,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Yi-1.5-34B-Chat": {
+        "link": "https://huggingface.co/01-ai/Yi-1.5-34B-Chat",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 49.39
+        },
+        "prompted": true,
+        "size": 34,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Yi-1.5-9B-Chat": {
+        "link": "https://huggingface.co/01-ai/Yi-1.5-9B-Chat",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 47.23
+        },
+        "prompted": true,
+        "size": 9,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "DeepSeek-coder-7b-instruct-v1.5": {
+        "link": "https://huggingface.co/deepseek-ai/deepseek-coder-7b-instruct-v1.5",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 41.21
+        },
+        "prompted": true,
+        "size": 7,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "DeepSeek-coder-33b-instruct": {
+        "link": "https://huggingface.co/deepseek-ai/deepseek-coder-33b-instruct",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 36.6
+        },
+        "prompted": true,
+        "size": 33,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "DeepSeek-moe-16b-chat": {
+        "link": "https://huggingface.co/deepseek-ai/deepseek-moe-16b-chat",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 31.01
+        },
+        "prompted": true,
+        "size": 16.4,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "DeepSeek-Coder-V2-Lite-Instruct": {
+        "link": "https://huggingface.co/deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 46.51
+        },
+        "prompted": true,
+        "size": 16,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "InternLM2-5-20b-chat": {
+        "link": "https://huggingface.co/internlm/internlm2_5-20b-chat",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 44.89
+        },
+        "prompted": true,
+        "size": 20,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "StarCoder2-15b-instruct-v0.1": {
+        "link": "https://huggingface.co/bigcode/starcoder2-15b-instruct-v0.1",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 47.94
+        },
+        "prompted": true,
+        "size": 15,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Claude-3-sonnet@20240229": {
+        "link": "",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 53.97
+        },
+        "prompted": true,
+        "size": null,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "GPT-4o-2024-05-13": {
+        "link": "",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 67
+        },
+        "prompted": true,
+        "size": null,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "GPT-3.5-turbo-0613": {
+        "link": "",
+        "open-data": null,
+        "pass@1": {
+            "instruct": null,
+            "complete": 51.7
+        },
+        "prompted": true,
+        "size": null,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    }
+}
