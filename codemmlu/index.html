@@ -43,6 +43,11 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+
   <style>
     table {
         width: 100%;
@@ -58,6 +63,108 @@
     }
     .highlight {
         font-weight: bold;
+    }
+
+    /* Interactive Leaderboard Styles */
+    #content {
+      width: 100%;
+      max-width: 100%;
+      padding: 0;
+    }
+
+    th, td {
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    #notes {
+      font-size: 0.75em;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    #notes h3 {
+      margin-top: 1em;
+      font-size: 2em;
+      text-align: left;
+    }
+
+    #notes li {
+      font-size: 1.2em;
+      font-weight: 300;
+      margin: 1em;
+    }
+
+    .form-select {
+      font-size: 1em;
+    }
+
+    table {
+      table-layout: auto;
+      width: 100%;
+    }
+
+    @media screen and (max-width: 1400px) {
+      body {
+        font-size: 1.6vw;
+      }
+
+      #content {
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      h2 {
+        font-size: 1.6em;
+      }
+
+      h3 {
+        font-size: 1.2em;
+      }
+
+      table {
+        font-size: medium;
+      }
+    }
+
+    .btn-group-lg > .btn, .btn-lg {
+      padding: 0.5rem 1rem;
+      font-size: 1.25rem;
+      border-radius: 0.3rem;
+    }
+
+    .btn-outline-hard {
+      color: #ff6b6b;
+      border: 2px solid #ff6b6b;
+      background-color: transparent;
+    }
+
+    .btn-outline-hard:hover,
+    .btn-check:checked + .btn-outline-hard,
+    .btn-outline-hard:active {
+      color: #fff;
+      background-color: #ff6b6b !important;
+      border-color: #ff6b6b;
+    }
+
+    .btn-outline-full {
+      color: #4ecdc4;
+      border: 2px solid #4ecdc4;
+      background-color: transparent;
+    }
+
+    .btn-outline-full:hover,
+    .btn-check:checked + .btn-outline-full,
+    .btn-outline-full:active {
+      color: #fff;
+      background-color: #4ecdc4 !important;
+      border-color: #4ecdc4;
     }
 </style>
 </head>
@@ -140,7 +247,7 @@
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://github.com/FSoft-AI4Code/CodeMMLU/blob/master/paper/main.pdf" target="_blank"
+                        <a href="https://github.com/FSoft-AI4Code/CodeMMLU/blob/main/paper/2410.01999v4.pdf" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -184,7 +291,7 @@
 
                   <!-- Data Link -->
                   <span class="link-block">
-                    <a href="" target="_blank"
+                    <a href="https://huggingface.co/datasets/Fsoft-AIC/CodeMMLU" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span>&#129303; Dataset</span>
                   </a>
@@ -192,9 +299,15 @@
 
                 <!-- Leaderboard Link -->
                 <span class="link-block">
+                  <a href="#leaderboard" class="external-link button is-normal is-rounded is-dark">
+                  <span>🏆 Leaderboard</span>
+                </a>
+
+                <!-- Leaderboard Link -->
+                <!-- <span class="link-block">
                   <a href="https://fsoft-ai4code.github.io/leaderboards/codemmlu/" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
-                  <span>🏆 Leaderboard</span>
+                  <span>🏆 Leaderboard</span> -->
                 </a>
               </span>
             </div>
@@ -227,7 +340,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Recent advancements in Code Large Language Models (CodeLLMs) have predominantly focused on open-ended code generation tasks, often neglecting the critical aspect of code understanding and comprehension. To bridge this gap, we present CodeMMLU, a comprehensive multiple-choice question-answer benchmark designed to evaluate the depth of software and code understanding in LLMs. CodeMMLU includes over 10,000 questions sourced from diverse domains, encompassing tasks such as code analysis, defect detection, and software engineering principles across multiple programming languages. Unlike traditional benchmarks, CodeMMLU assesses models’ ability to reason about code rather than merely generate it, providing deeper insights into their grasp of complex software concepts and systems. Our extensive evaluation reveals that even state-of-the-art models face significant challenges with CodeMMLU, highlighting deficiencies in comprehension beyond code generation. By underscoring the crucial relationship between code understanding and effective generation, CodeMMLU serves as a vital resource for advancing AI-assisted software development, ultimately aiming to create more reliable and capable coding assistants.
+            Recent advancements in Code Large Language Models (CodeLLMs) have predominantly focused on open-ended code generation tasks, often neglecting the critical aspect of code understanding and comprehension. To bridge this gap, we present CodeMMLU, a comprehensive multiple-choice question-answer benchmark designed to evaluate the depth of software and code understanding in LLMs. CodeMMLU includes over 10,000 questions sourced from diverse domains, encompassing tasks such as code analysis, defect detection, and software engineering principles across multiple programming languages. Unlike traditional benchmarks, CodeMMLU assesses models' ability to reason about code rather than merely generate it, providing deeper insights into their grasp of complex software concepts and systems. Our extensive evaluation reveals that even state-of-the-art models face significant challenges with CodeMMLU, highlighting deficiencies in comprehension beyond code generation. By underscoring the crucial relationship between code understanding and effective generation, CodeMMLU serves as a vital resource for advancing AI-assisted software development, ultimately aiming to create more reliable and capable coding assistants.
           </p>
         </div>
       </div>
@@ -253,7 +366,7 @@
             </ul>
           </p>
           <p></p>
-          CodeMMLU enables us to assess LLMs’ capabilities in coding and software tasks from a novel perspective, extending beyond traditional code generation and completion. Our analysis reveals several notable findings: (1) previously unexplored bias issues in CodeLLMs, aligning with those observed in natural language MCQA tasks; (2) GPT-4 consistently achieving the highest average performance among closed-source models, while (3) the Meta-Llama family demonstrated the greatest accuracy among open-source models; (4) scaling laws related to model size were partially observed within the same model family but not across different families, suggesting the significant influence of pretraining datasets, methodologies, and model architectures; (5) advanced prompting techniques, such as Chain-of-Thought (CoT), consistently degraded performance, raising concerns about CodeLLMs’ reasoning abilities on complex, step-by-step tasks; and (6) benchmarks like HumanEval, when converted from open-ended code generation to MCQA format, show that LLMs perform worse on MCQA, raising concerns about their real capability to understand and comprehend code. These findings highlight the current shortcomings of CodeLLMs and the intricate relationship between model architecture, training data quality, and evaluation methods in determining performance on software-related tasks.
+          CodeMMLU enables us to assess LLMs' capabilities in coding and software tasks from a novel perspective, extending beyond traditional code generation and completion. Our analysis reveals several notable findings: (1) previously unexplored bias issues in CodeLLMs, aligning with those observed in natural language MCQA tasks; (2) GPT-4 consistently achieving the highest average performance among closed-source models, while (3) the Meta-Llama family demonstrated the greatest accuracy among open-source models; (4) scaling laws related to model size were partially observed within the same model family but not across different families, suggesting the significant influence of pretraining datasets, methodologies, and model architectures; (5) advanced prompting techniques, such as Chain-of-Thought (CoT), consistently degraded performance, raising concerns about CodeLLMs' reasoning abilities on complex, step-by-step tasks; and (6) benchmarks like HumanEval, when converted from open-ended code generation to MCQA format, show that LLMs perform worse on MCQA, raising concerns about their real capability to understand and comprehend code. These findings highlight the current shortcomings of CodeLLMs and the intricate relationship between model architecture, training data quality, and evaluation methods in determining performance on software-related tasks.
           </p>
           <p>
           </p>
@@ -282,251 +395,396 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Evaluation Results</h2>
+        <h2 class="title is-3" id="leaderboard">Evaluation Results</h2>
         <div class="content has-text-justified">
           <p>
             CodeMMLU revealed significant performance differences across models, as shown in the table below. OpenAI's GPT-4o outperformed all models on CodeMMLU, demonstrating its quality across diverse tasks. Notably, despite not being the latest model, the instructed version of Meta-Llama-3-70B achieved the highest score among open-source models from 8 families. While LLMs perform well on knowledge-based tasks, they struggle with real-world problems, particularly in defect detection tasks.
           </p>
         </div>
-        <div class="content has-text-justified">
-          <style type="text/css">
-            .tg  {border-collapse:collapse;border-color:#ccc;border-spacing:0;}
-            .tg td{background-color:#fff;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
-              font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
-            .tg th{background-color:#f0f0f0;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
-              font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-            .tg .tg-baqh{text-align:center;vertical-align:top}
-            .tg .tg-buh4{background-color:#f9f9f9;text-align:left;vertical-align:top}
-            .tg .tg-0lax{text-align:left;vertical-align:top}
-            .tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
-            </style>
-            <table class="tg"><thead>
-              <tr>
-                <th class="tg-0lax"></th>
-                <th class="tg-amwm">Model name</th>
-                <th class="tg-amwm">Size (B)</th>
-                <th class="tg-amwm">Syntactic knowledge</th>
-                <th class="tg-amwm">Semantic knowledge</th>
-                <th class="tg-amwm">Real-world tasks</th>
-                <th class="tg-amwm">CodeMMLU</th>
-              </tr></thead>
-            <tbody>
-              <tr>
-                <td class="tg-baqh" colspan="7">Closed-source models&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              </tr>
-              <tr>
-                <td class="tg-baqh">Anthropic</td>
-                <td class="tg-buh4">Claude-3-sonnet@20240229</td>
-                <td class="tg-0lax">-</td>
-                <td class="tg-buh4"><b>67.22</b></td>
-                <td class="tg-0lax"><b>66.08</b></td>
-                <td class="tg-buh4">38.26</td>
-                <td class="tg-0lax">53.97</td>
-              </tr>
-              <tr>
-                <td class="tg-baqh" rowspan="2">OpenAI</td>
-                <td class="tg-buh4">GPT-4o-2024-05-13</td>
-                <td class="tg-0lax">-</td>
-                <td class="tg-buh4">60.41</td>
-                <td class="tg-0lax">57.82</td>
-                <td class="tg-buh4"><b>77.18</b></td>
-                <td class="tg-0lax"><b>67.0</b></td>
-              </tr>
-              <tr>
-                <td class="tg-buh4">GPT-3.5-turbo-0613</td>
-                <td class="tg-0lax">-</td>
-                <td class="tg-buh4">61.68</td>
-                <td class="tg-0lax">53.64</td>
-                <td class="tg-buh4">45.26</td>
-                <td class="tg-0lax">51.7</td>
-              </tr>
-              <tr>
-                <td class="tg-0lax" colspan="7">Open-source models&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              </tr>
-              <tr>
-                <td class="tg-baqh" rowspan="5">Meta Llama</td>
-                <td class="tg-buh4">CodeLlama-34b-Instruct-hf</td>
-                <td class="tg-0lax">34</td>
-                <td class="tg-buh4">56.81</td>
-                <td class="tg-0lax">46.93</td>
-                <td class="tg-buh4">23.55</td>
-                <td class="tg-0lax">38.73</td>
-              </tr>
-              <tr>
-                <td class="tg-buh4">Meta-Llama-3-70B</td>
-                <td class="tg-0lax">70</td>
-                <td class="tg-buh4">63.38</td>
-                <td class="tg-0lax">57.64</td>
-                <td class="tg-buh4">35.29</td>
-                <td class="tg-0lax">48.98</td>
-              </tr>
-              <tr>
-                <td class="tg-buh4">Meta-Llama-3-70B-Instruct</td>
-                <td class="tg-0lax">70</td>
-                <td class="tg-buh4"><b>64.90</b></td>
-                <td class="tg-0lax"><b>62.96</b></td>
-                <td class="tg-buh4"><b>60.84</b></td>
-                <td class="tg-0lax"><b>62.45</b></td>
-              </tr>
-              <tr>
-                <td class="tg-buh4">Meta-Llama-3.1-70B</td>
-                <td class="tg-0lax">70</td>
-                <td class="tg-buh4">64.09</td>
-                <td class="tg-0lax">59.00</td>
-                <td class="tg-buh4">8.22</td>
-                <td class="tg-0lax">37.56</td>
-              </tr>
-              <tr>
-                <td class="tg-buh4">Meta-Llama-3.1-70B-Instruct</td>
-                <td class="tg-0lax">70</td>
-                <td class="tg-buh4">64.42</td>
-                <td class="tg-0lax">62.25</td>
-                <td class="tg-buh4">56.11</td>
-                <td class="tg-0lax">60</td>
-              </tr>
-              <tr>
-                <td class="tg-baqh" rowspan="3">Mistral</td>
-                <td class="tg-buh4">Mistral-7B-Instruct-v0.3</td>
-                <td class="tg-0lax">7</td>
-                <td class="tg-buh4">54.42</td>
-                <td class="tg-0lax">51.25</td>
-                <td class="tg-buh4">31.85</td>
-                <td class="tg-0lax">43.33</td>
-              </tr>
-              <tr>
-                <td class="tg-buh4">Mixtral-8x7B-Instruct-v0.1</td>
-                <td class="tg-0lax">46.7</td>
-                <td class="tg-buh4">61.17</td>
-                <td class="tg-0lax">54.89</td>
-                <td class="tg-buh4">24.90</td>
-                <td class="tg-0lax">42.96</td>
-              </tr>
-              <tr>
-                <td class="tg-buh4">Codestral-22B-v0.1</td>
-                <td class="tg-0lax">22</td>
-                <td class="tg-buh4">60.34</td>
-                <td class="tg-0lax">52.11</td>
-                <td class="tg-buh4">37.86</td>
-                <td class="tg-0lax">47.6</td>
-              </tr>
-              <tr>
-                <td class="tg-baqh" rowspan="2">Phi</td>
-                <td class="tg-buh4">Phi-3-medium-128k-instruct</td>
-                <td class="tg-0lax">14</td>
-                <td class="tg-buh4">58.54</td>
-                <td class="tg-0lax">54.56</td>
-                <td class="tg-buh4">37.89</td>
-                <td class="tg-0lax">48.03</td>
-              </tr>
-              <tr>
-                <td class="tg-buh4">Phi-3-mini-128k-instruct</td>
-                <td class="tg-0lax">3.8</td>
-                <td class="tg-buh4">53.01</td>
-                <td class="tg-0lax">48.65</td>
-                <td class="tg-buh4">22.36</td>
-                <td class="tg-0lax">37.93</td>
-              </tr>
-              <tr>
-                <td class="tg-baqh" rowspan="2">Qwen</td>
-                <td class="tg-buh4">Qwen2-57B-A14B-Instruct</td>
-                <td class="tg-0lax">57</td>
-                <td class="tg-buh4">61.34</td>
-                <td class="tg-0lax">57.48</td>
-                <td class="tg-buh4">30.48</td>
-                <td class="tg-0lax">46.34</td>
-              </tr>
-              <tr>
-                <td class="tg-buh4">CodeQwen1.5-7B-Chat</td>
-                <td class="tg-0lax">7</td>
-                <td class="tg-buh4">49.66</td>
-                <td class="tg-0lax">46.58</td>
-                <td class="tg-buh4">56.37</td>
-                <td class="tg-0lax">49.82</td>
-              </tr>
-              <tr>
-                <td class="tg-baqh" rowspan="2">Yi</td>
-                <td class="tg-buh4">Yi-1.5-34B-Chat</td>
-                <td class="tg-0lax">34</td>
-                <td class="tg-buh4">58.32</td>
-                <td class="tg-0lax">55.59</td>
-                <td class="tg-buh4">40.27</td>
-                <td class="tg-0lax">49.39</td>
-              </tr>
-              <tr>
-                <td class="tg-buh4">Yi-1.5-9B-Chat</td>
-                <td class="tg-0lax">9</td>
-                <td class="tg-buh4">55.64</td>
-                <td class="tg-0lax">55.06</td>
-                <td class="tg-buh4">37.15</td>
-                <td class="tg-0lax">47.23</td>
-              </tr>
-              <tr>
-                <td class="tg-baqh" rowspan="4">Deep Seek</td>
-                <td class="tg-buh4">DeepSeek-coder-7b-instruct-v1.5</td>
-                <td class="tg-0lax">7</td>
-                <td class="tg-buh4">56.67</td>
-                <td class="tg-0lax">47.90</td>
-                <td class="tg-buh4">28.46</td>
-                <td class="tg-0lax">41.21</td>
-              </tr>
-              <tr>
-                <td class="tg-buh4">DeepSeek-coder-33b-instruct</td>
-                <td class="tg-0lax">33</td>
-                <td class="tg-buh4">53.65</td>
-                <td class="tg-0lax">46.11</td>
-                <td class="tg-buh4">21.47</td>
-                <td class="tg-0lax">36.6</td>
-              </tr>
-              <tr>
-                <td class="tg-buh4">DeepSeek-moe-16b-chat</td>
-                <td class="tg-0lax">16.4</td>
-                <td class="tg-buh4">31.74</td>
-                <td class="tg-0lax">35.43</td>
-                <td class="tg-buh4">27.33</td>
-                <td class="tg-0lax">31.01</td>
-              </tr>
-              <tr>
-                <td class="tg-buh4">DeepSeek-Coder-V2-Lite-Instruct</td>
-                <td class="tg-0lax">16</td>
-                <td class="tg-buh4">59.91</td>
-                <td class="tg-0lax">54.76</td>
-                <td class="tg-buh4">33.62</td>
-                <td class="tg-0lax">46.51</td>
-              </tr>
-              <tr>
-                <td class="tg-baqh">InternLM</td>
-                <td class="tg-buh4">InternLM2-5-20b-chat</td>
-                <td class="tg-0lax">20</td>
-                <td class="tg-buh4">57.85</td>
-                <td class="tg-0lax">55.51</td>
-                <td class="tg-buh4">30.44</td>
-                <td class="tg-0lax">44.89</td>
-              </tr>
-              <tr>
-                <td class="tg-baqh">StarCoder2</td>
-                <td class="tg-buh4">StarCoder2-15b-instruct-v0.1</td>
-                <td class="tg-0lax">15</td>
-                <td class="tg-buh4">56.58</td>
-                <td class="tg-0lax">49.07</td>
-                <td class="tg-buh4">42.79</td>
-                <td class="tg-0lax">47.94</td>
-              </tr>
-            </tbody></table>
-            <figcaption><i><b>Summary performance of LLM family on CodeMMLU.</b> The evaluation results (accuracy %) of different language models across CodeMMLU task.</i></figcaption>
+
+        <!-- Interactive Leaderboard -->
+        <div id="content" class="container-fluid d-flex flex-column align-items-center gap-3 px-0">
+          <div class="btn-group" role="group" id="Benchmark">
+            <input type="radio" class="btn-check" name="btnradio" id="Complete" checked />
+          </div>
+          <div id="chart" style="width: 100%; height: 600px"></div>
+          <div class="container-fluid d-flex flex-row flex-nowrap px-0">
+            <div class="container-fluid d-flex flex-column align-items-center px-0">
+              <table id="origin" style="width: 80%" class="table table-responsive table-striped table-bordered flex-shrink-1 border border-3"></table>
+            </div>
         </div>
-        <!-- <figure>
-          <img src="static/images/llm_result.png", width="100%">
-          <figcaption><i>Table 1:  Pass@k (k= 1 and 5) and DIR results of various LLMs on RepoExec</i></figcaption>
-        </figure> -->
-        <div class="content has-text-justified">
-          <p>
-            For more benchmark detail, please check <a href="https://fsoft-ai4code.github.io/leaderboards/codemmlu/">👉 HERE 👈</a>
-          </p>
         </div>
-        <figure>
-          <img src="static/images/task_detail.png", width="100%"></img>
-          <figcaption><i><b>CodeMMLU accuracy by task on LLMs.</b> While knowledge tasks are following the scaling law, real-world tasks offer more challenges to LLMs which indicate the performance of instruction tuning and data quality when evaluating on CodeMMLU.</i></figcaption>
-        </figure>
+
+        <!-- Interactive Leaderboard Script -->
+        <script>
+          const originTable = document.getElementById("origin");
+          const benchmarkRadio = document.getElementById("Benchmark");
+          const chartDom = document.getElementById("chart");
+          var chart = echarts.init(chartDom);
+
+          const dataUrl = "static/data/results.json";
+
+          var xhr = new XMLHttpRequest();
+          xhr.open("GET", dataUrl, false);
+          xhr.send();
+
+          const calcAverage = (a, b) => {
+            if (a == null || b == null) {
+              return null;
+            } else {
+              return parseFloat(((parseFloat(a) + parseFloat(b)) / 2).toFixed(1));
+            }
+          };
+
+          var data;
+          if (xhr.status === 200) {
+            data = JSON.parse(xhr.responseText);
+            data = Object.keys(data).map((key) => {
+              return {
+                Model: key,
+                ...data[key],
+              };
+            });
+          } else {
+            alert("Failed to load data from results.json");
+          }
+          const globalData = data;
+
+          const clearTable = () => {
+            originTable.innerHTML = "";
+          };
+
+          const clearChart = () => {
+            chartOption.xAxis.data = [];
+            chartOption.series[0].data = [];
+            chartOption.series[1].data = [];
+            chartOption.series[0].markLine.data = [];
+            chartOption.series[1].markLine.data = [];
+          };
+
+          var chartOption = {
+            legend: {
+              data: ["base", "instructed"],
+              itemStyle: {
+                opacity: 1.0,
+              },
+            },
+            grid: {
+              left: "1%",
+              right: "4%",
+              bottom: "3%",
+              containLabel: true,
+            },
+            xAxis: {
+              name: "Size",
+              type: "category",
+              boundaryGap: false,
+              data: [],
+              axisLabel: {
+                formatter: function (value) {
+                  return value + "B";
+                },
+              },
+            },
+            yAxis: {
+              name: "CodeMMLU Acc (%)",
+              type: "value",
+              show: true,
+              nameTextStyle: {
+                align: "left",
+              },
+              splitLine: {
+                show: true,
+                lineStyle: {
+                  color: "gray",
+                  type: "dashed",
+                },
+              },
+            },
+            tooltip: {
+              trigger: "item",
+              axisPointer: {
+                type: "cross",
+              },
+            },
+            series: [
+              {
+                name: "base",
+                type: "scatter",
+                data: [],
+                itemStyle: {
+                  color: "#91cc75",
+                  opacity: 0.2,
+                },
+                emphasis: {
+                  focus: "series",
+                },
+                lineStyle: {
+                  width: 2,
+                },
+                markLine: {
+                  symbol: "none",
+                  lineStyle: {
+                    type: "solid",
+                    width: 1
+                  },
+                  label: {
+                    show: true,
+                    position: "insideEndTop",
+                    formatter: function (params) {
+                      return params.data.name;
+                    },
+                    fontSize: 12,
+                    color: "#91cc75"
+                  },
+                  emphasis: {
+                    disabled: true,
+                    lineStyle: {
+                      width: 1
+                    }
+                  },
+                  data: [],
+                },
+              },
+              {
+                name: "instructed",
+                type: "scatter",
+                data: [],
+                itemStyle: {
+                  color: "#5470c6",
+                  opacity: 0.2,
+                },
+                emphasis: {
+                  focus: "series",
+                },
+                lineStyle: {
+                  width: 2,
+                },
+                markLine: {
+                  symbol: "none",
+                  lineStyle: {
+                    type: "solid",
+                    width: 1
+                  },
+                  label: {
+                    show: true,
+                    position: "insideEndTop",
+                    formatter: function (params) {
+                      return params.data.name;
+                    },
+                    fontSize: 12,
+                    color: "#5470c6"
+                  },
+                  emphasis: {
+                    disabled: true,
+                    lineStyle: {
+                      width: 1
+                    }
+                  },
+                  data: [],
+                },
+              },
+            ],
+          };
+
+          const theaders = ["Model", "Size (B)", "Syntactic Acc", "Semantic Acc", "Fundamental-task Acc", "CodeMMLU"];
+
+          const displayTable = (table, score) => {
+            data = globalData
+              .filter((row) => {
+                return row["pass@1"][score] != null;
+              })
+              .sort((a, b) => {
+                return b["pass@1"][score] - a["pass@1"][score];
+              });
+          
+            var thead = document.createElement("thead");
+            var headerRow = document.createElement("tr");
+            var th = document.createElement("th");
+            th.textContent = "#";
+            headerRow.appendChild(th);
+            
+            theaders.forEach(function (header) {
+              var th = document.createElement("th");
+              th.textContent = header;
+              if (header == "CodeMMLU") {
+                th.style.backgroundColor = "#EEFFEE";
+              }
+              if (header == "Size (B)") {
+                th.style.backgroundColor = "#FFFFD4";
+              }
+              headerRow.appendChild(th);
+            });
+            thead.appendChild(headerRow);
+            table.appendChild(thead);
+          
+            var tbody = document.createElement("tbody");
+            var previousScore = null;
+            var actualRank = 1;
+          
+            data.forEach((row, index) => {
+              var dataRow = document.createElement("tr");
+              var rankCell = document.createElement("td");
+          
+              if (row["pass@1"][score] !== previousScore) {
+                actualRank = index + 1;
+                previousScore = row["pass@1"][score];
+              }
+          
+              rankCell.textContent = actualRank;
+              dataRow.appendChild(rankCell);
+          
+              var modelCell = document.createElement("td");
+              if (actualRank == 1) {
+                modelCell.textContent = "🥇 ";
+              } else if (actualRank == 2) {
+                modelCell.textContent = "🥈 ";
+              } else if (actualRank == 3) {
+                modelCell.textContent = "🥉 ";
+              } else {
+                modelCell.textContent = "";
+              }
+              var modelLink = document.createElement("a");
+              modelLink.href = row["link"];
+              modelLink.textContent = row["Model"];
+              modelLink.classList.add("link-underline-primary");
+              modelLink.classList.add("text-nowrap");
+              modelCell.appendChild(modelLink);
+              modelCell.classList.add("d-flex");
+              modelCell.classList.add("flex-nowrap");
+              dataRow.appendChild(modelCell);
+
+              var sizeCell = document.createElement("td");
+              sizeCell.textContent = row["size"] ? row["size"] : "-";
+              sizeCell.style.backgroundColor = "#FFFFD4";
+              dataRow.appendChild(sizeCell);
+
+              var syntacticCell = document.createElement("td");
+              syntacticCell.textContent = row["syntactic_accuracy"] || "-";
+              dataRow.appendChild(syntacticCell);
+
+              var semanticCell = document.createElement("td");
+              semanticCell.textContent = row["semantic_accuracy"] || "-";
+              dataRow.appendChild(semanticCell);
+
+              var rtaskCell = document.createElement("td");
+              rtaskCell.textContent = row["realtask_accuracy"] || "-";
+              dataRow.appendChild(rtaskCell);
+
+              var passCell = document.createElement("td");
+              passCell.classList.add("text-nowrap");
+              passCell.textContent = row["pass@1"][score];
+              passCell.style.backgroundColor = "#EEFFEE";
+              passCell.style.fontWeight = "bold";
+              dataRow.appendChild(passCell);
+              tbody.appendChild(dataRow);
+            });
+            table.appendChild(tbody);
+          };
+
+          const displayChart = (score) => {
+            let data = globalData
+              .filter((model) => {
+                return model["pass@1"][score] != null;
+              })
+              .sort((a, b) => {
+                return b["pass@1"][score] - a["pass@1"][score];
+              });
+
+            const sizeList = [
+              ...new Set(
+                data
+                  .filter((model) => model["size"] != null)
+                  .map((model) => Math.round(model["size"])),
+              ),
+            ].sort((a, b) => {
+              return a - b;
+            });
+
+            chartOption.xAxis.data = sizeList;
+            chartOption.yAxis.max =
+              1 + Math.max(...data.map((model) => model["pass@1"][score]));
+
+            const nonPromptedModels = data.filter(
+              (model) => model["prompted"] == false,
+            );
+            const promptedModels = data.filter(
+              (model) => model["prompted"] == true,
+            );
+
+            [nonPromptedModels, promptedModels].forEach((series, idx) => {
+              series.forEach((model) => {
+                if (model["size"] == null) {
+                  chartOption.series[idx].markLine.data.push({
+                    name: model["Model"],
+                    yAxis: model["pass@1"][score],
+                  });
+                } else {
+                  chartOption.series[idx].data.push({
+                    name: model["Model"],
+                    value: [`${Math.round(model["size"])}`, model["pass@1"][score]],
+                  });
+                }
+              });
+            });
+
+            const offsets = [[50, 0]]
+              .concat(Array.from({ length: sizeList.length - 2 }, () => [0, 0]))
+              .concat([[-50, 0]]);
+            sizeList.forEach((size, idx) => {
+              const bestNonPromptedModel = nonPromptedModels
+                .filter((model) => Math.round(model["size"]) == size)
+                .sort((a, b) => {
+                  return b["pass@1"][score] - a["pass@1"][score];
+                })[0];
+              const bestPromptedModel = promptedModels
+                .filter((model) => Math.round(model["size"]) == size)
+                .sort((a, b) => {
+                  return b["pass@1"][score] - a["pass@1"][score];
+                })[0];
+              const hightLightBest = (series, model) => {
+                const point = chartOption.series[series].data.find(
+                  (point) => point.name == model["Model"],
+                );
+                point.itemStyle = {
+                  opacity: 1.0,
+                };
+                point.label = {
+                  show: true,
+                  position: "top",
+                  offset: offsets[idx],
+                  formatter: function (params) {
+                    return params.data.name;
+                  },
+                  color: "inherit",
+                };
+              };
+              if (bestNonPromptedModel) {
+                hightLightBest(0, bestNonPromptedModel);
+              }
+              if (bestPromptedModel) {
+                hightLightBest(1, bestPromptedModel);
+              }
+            });
+
+            chart.setOption(chartOption);
+          };
+
+          const completeRadio = document.getElementById("Complete");
+
+          completeRadio.addEventListener("click", function () {
+            clearTable();
+            displayTable(originTable, "complete");
+            clearChart();
+            displayChart("complete");
+          });
+
+          completeRadio.click();
+
+          window.addEventListener("resize", () => {
+            chart.resize();
+          });
+        </script>
       </div>
     </div>
   </div>
@@ -534,53 +792,24 @@
 </section>
 
 
-<!-- <section class="section hero is-light">
+<!-- Notes Section -->
+<section class="section" id="notes">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Enhancing Functional Correctness and Dependency Invocation abilities</h2>
-        <div class="content has-text-justified">
-          <p>
-            Two approaches are investigated to enhance the performance of generated code in terms of both functional correctness and dependency invocation.
-            <ul>
-              <li><b>Multi-round Debugging:</b> Leveraging test execution outputs and incorporating self-refinement through multiple rounds can dramatically boost a model's performance in generating accurate code and effectively utilizing dependencies.</li>
-              <figure>
-                <img src="static/images/debug_result.png", width="100%">
-                <figcaption>Figure 2:  Improvement of the performance of several models on RepoExec after 3-round debugging process.</figcaption>
-              </figure>
-              <li><b>Instruction tuning:</b> RepoExec also comes with a valuable instruction-tuning training dataset. The experimental results, highlighted in the table below, clearly demonstrate the effectiveness of this approach with just a single round of generation.</li>
-              <figure>
-                <img src="static/images/instruction_tuning.png", width="100%">
-                <figcaption>Table 2:  Improvement of the performance of several models on RepoExec after instruction tuning.</figcaption>
-              </figure>
-            </ul>
-          </p>
-        </div>
-      </div>
+    <h3>📝 Notes</h3>
+    <div class="inline-block mt-3 px-3">
+      <u1>
+        <li>Evaluated using <a href="https://github.com/FSoft-AI4Code/CodeMMLU">CodeMMLU</a></li>
+        <li>Models are ranked according to Accuracy using greedy decoding.</li>
+        <li>"Size" here is the amount of activated model weight during inference.</li>
+      </u1>
+      <!-- <ol>
+        <li>Evaluated using <a href="https://github.com/FSoft-AI4Code/CodeMMLU">CodeMMLU</a></li>
+        <li>Models are ranked according to Accuracy using greedy decoding.</li>
+        <li>"Size" here is the amount of activated model weight during inference.</li>
+      </ol> -->
     </div>
   </div>
-</section> -->
-<!-- End paper abstract -->
-
-
-
-<!-- Youtube video -->
-<!--  -->
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-
-<!--End paper poster -->
+</section>
 
 
 <!--BibTex citation -->
@@ -606,13 +835,15 @@
           <img src="static/images/aic_logo.png", width="120px">
           <p>
             <h5>Contact us</h5>
-            🌐: <a href="https://www.fpt-aicenter.com/ai-residency/">fpt-aicenter</a>
-            Ⓜ️: support.ailab@fpt.com
-            </ul>
+            <a href="https://www.fpt-aicenter.com/ai-residency/">🌐 fpt-aicenter</a>
+            <a href="mailto:support.ailab@fpt.com">Ⓜ️ support.ailab@fpt.com</a>
           </p>
+        </div>
+        <div class="content">
           <p>
-            <h5>Acknowledgements</h5>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the&nbsp;<a href="https://nerfies.github.io" target="_blank">Nerfies</a>&nbsp;project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
 
         </div>

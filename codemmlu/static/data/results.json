@@ -1,0 +1,1106 @@
+{
+    "Claude 3.7 Sonnet": {
+        "link": "Claude 3.7 Sonnet",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 61.65
+        },
+        "realtask_accuracy": 60.92,
+        "syntactic_accuracy": 52.78,
+        "semantic_accuracy": 76.26,
+        "prompted": true,
+        "size": null,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Claude 3.5 Sonnet": {
+        "link": "Claude 3.5 Sonnet",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 59.81
+        },
+        "realtask_accuracy": 58.56,
+        "syntactic_accuracy": 52.23,
+        "semantic_accuracy": 73.45,
+        "prompted": true,
+        "size": null,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Cluade 3.5 Haiku": {
+        "link": "Cluade 3.5 Haiku",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 57.25
+        },
+        "realtask_accuracy": 57.83,
+        "syntactic_accuracy": 49.24,
+        "semantic_accuracy": 68.2,
+        "prompted": true,
+        "size": null,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Claude 3 Sonnet": {
+        "link": "Claude 3 Sonnet",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 53.97
+        },
+        "realtask_accuracy": 38.26,
+        "syntactic_accuracy": 67.22,
+        "semantic_accuracy": 66.08,
+        "prompted": true,
+        "size": null,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "GPT o3-mini": {
+        "link": "GPT o3-mini",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 62.36
+        },
+        "realtask_accuracy": 62.77,
+        "syntactic_accuracy": 53.08,
+        "semantic_accuracy": 75.5,
+        "prompted": true,
+        "size": null,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "GPT 4o": {
+        "link": "GPT 4o",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 67.0
+        },
+        "realtask_accuracy": 77.18,
+        "syntactic_accuracy": 60.41,
+        "semantic_accuracy": 57.82,
+        "prompted": true,
+        "size": null,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "GPT 4o-mini": {
+        "link": "GPT 4o-mini",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 38.43
+        },
+        "realtask_accuracy": 20.33,
+        "syntactic_accuracy": 48.66,
+        "semantic_accuracy": 55.9,
+        "prompted": true,
+        "size": null,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "GPT 3.5-turbo": {
+        "link": "GPT 3.5-turbo",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 51.7
+        },
+        "realtask_accuracy": 58.52,
+        "syntactic_accuracy": 61.68,
+        "semantic_accuracy": 84.88,
+        "prompted": true,
+        "size": null,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Meta Llama3.3 70B Inst": {
+        "link": "Meta Llama3.3 70B Inst",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 40.66
+        },
+        "realtask_accuracy": 30.96,
+        "syntactic_accuracy": 44.31,
+        "semantic_accuracy": 52.76,
+        "prompted": true,
+        "size": 70.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Meta Llama3.1 405B Inst": {
+        "link": "Meta Llama3.1 405B Inst",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 58.23
+        },
+        "realtask_accuracy": 57.1,
+        "syntactic_accuracy": 50.82,
+        "semantic_accuracy": 71.41,
+        "prompted": true,
+        "size": 405.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Meta Llama3.1 70B": {
+        "link": "Meta Llama3.1 70B",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 37.56
+        },
+        "realtask_accuracy": 65.65,
+        "syntactic_accuracy": 64.09,
+        "semantic_accuracy": 87.02,
+        "prompted": true,
+        "size": 70.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Meta Llama3 70B": {
+        "link": "Meta Llama3 70B",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 48.98
+        },
+        "realtask_accuracy": 63.1,
+        "syntactic_accuracy": 63.38,
+        "semantic_accuracy": 86.02,
+        "prompted": true,
+        "size": 70.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "CodeLlama34B Inst": {
+        "link": "CodeLlama34B Inst",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 38.73
+        },
+        "realtask_accuracy": 23.55,
+        "syntactic_accuracy": 56.81,
+        "semantic_accuracy": 46.93,
+        "prompted": true,
+        "size": 34.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "DeepSeek R1": {
+        "link": "DeepSeek R1",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 43.91
+        },
+        "realtask_accuracy": 38.08,
+        "syntactic_accuracy": 42.39,
+        "semantic_accuracy": 56.77,
+        "prompted": true,
+        "size": 671.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "DeepSeek V3": {
+        "link": "DeepSeek V3",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 49.08
+        },
+        "realtask_accuracy": 45.06,
+        "syntactic_accuracy": 48.3,
+        "semantic_accuracy": 57.53,
+        "prompted": true,
+        "size": 685.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "DeepSeekCoder 7B_v1.5 Inst": {
+        "link": "DeepSeekCoder 7B_v1.5 Inst",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 41.21
+        },
+        "realtask_accuracy": 28.46,
+        "syntactic_accuracy": 56.67,
+        "semantic_accuracy": 47.9,
+        "prompted": true,
+        "size": 7.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "DeepSeekCoder 33B Inst": {
+        "link": "DeepSeekCoder 33B Inst",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 36.6
+        },
+        "realtask_accuracy": 52.16,
+        "syntactic_accuracy": 53.65,
+        "semantic_accuracy": 74.89,
+        "prompted": true,
+        "size": 33.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "DeepSeekMoE 16B Chat": {
+        "link": "DeepSeekMoE 16B Chat",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 31.01
+        },
+        "realtask_accuracy": 41.48,
+        "syntactic_accuracy": 31.74,
+        "semantic_accuracy": 41.94,
+        "prompted": true,
+        "size": 16.4,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Mixtral 8x7B Inst": {
+        "link": "Mixtral 8x7B Inst",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 42.96
+        },
+        "realtask_accuracy": 61.83,
+        "syntactic_accuracy": 61.17,
+        "semantic_accuracy": 85.02,
+        "prompted": true,
+        "size": 46.7,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Phi4": {
+        "link": "Phi4",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 49.19
+        },
+        "realtask_accuracy": 47.82,
+        "syntactic_accuracy": 45.34,
+        "semantic_accuracy": 57.46,
+        "prompted": true,
+        "size": 14.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Phi4 Mini Inst": {
+        "link": "Phi4 Mini Inst",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 34.85
+        },
+        "realtask_accuracy": 19.75,
+        "syntactic_accuracy": 41.94,
+        "semantic_accuracy": 51.59,
+        "prompted": true,
+        "size": 12.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Phi3 Medium Inst (128k)": {
+        "link": "Phi3 Medium Inst (128k)",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 48.03
+        },
+        "realtask_accuracy": 37.89,
+        "syntactic_accuracy": 58.54,
+        "semantic_accuracy": 54.56,
+        "prompted": true,
+        "size": 14.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Qwen2.5 14B Inst": {
+        "link": "Qwen2.5 14B Inst",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 51.38
+        },
+        "realtask_accuracy": 51.49,
+        "syntactic_accuracy": 46.38,
+        "semantic_accuracy": 58.7,
+        "prompted": true,
+        "size": 14.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "QwQ 38B Preview": {
+        "link": "QwQ 38B Preview",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 46.34
+        },
+        "realtask_accuracy": 30.48,
+        "syntactic_accuracy": 61.34,
+        "semantic_accuracy": 57.48,
+        "prompted": true,
+        "size": 57.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "QwenCoder2.5 14B Inst": {
+        "link": "QwenCoder2.5 14B Inst",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 47.65
+        },
+        "realtask_accuracy": 43.27,
+        "syntactic_accuracy": 46.22,
+        "semantic_accuracy": 57.74,
+        "prompted": true,
+        "size": 14.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "QwenCoder2.5 32B Inst": {
+        "link": "QwenCoder2.5 32B Inst",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 56.4
+        },
+        "realtask_accuracy": 53.89,
+        "syntactic_accuracy": 50.63,
+        "semantic_accuracy": 69.61,
+        "prompted": true,
+        "size": 32.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "CodeQwen1.5 7B Chat": {
+        "link": "CodeQwen1.5 7B Chat",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 49.82
+        },
+        "realtask_accuracy": 46.06,
+        "syntactic_accuracy": 49.66,
+        "semantic_accuracy": 67.62,
+        "prompted": true,
+        "size": 7.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Yi1.5 34B Chat": {
+        "link": "Yi1.5 34B Chat",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 49.39
+        },
+        "realtask_accuracy": 40.27,
+        "syntactic_accuracy": 58.32,
+        "semantic_accuracy": 55.59,
+        "prompted": true,
+        "size": 34.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Yi1.5 9B Chat": {
+        "link": "Yi1.5 9B Chat",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 47.23
+        },
+        "realtask_accuracy": 60.05,
+        "syntactic_accuracy": 55.64,
+        "semantic_accuracy": 75.46,
+        "prompted": true,
+        "size": 9.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "InternLM2.5 20B Chat": {
+        "link": "InternLM2.5 20B Chat",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 44.89
+        },
+        "realtask_accuracy": 30.44,
+        "syntactic_accuracy": 57.85,
+        "semantic_accuracy": 55.51,
+        "prompted": true,
+        "size": 20.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "CodeLlama-7b-Instruct-hf": {
+        "link": "CodeLlama-7b-Instruct-hf",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 27.01
+        },
+        "realtask_accuracy": 4.78,
+        "syntactic_accuracy": 50.14,
+        "semantic_accuracy": 41.22,
+        "prompted": true,
+        "size": 7.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "CodeLlama-7b-Python-hf": {
+        "link": "CodeLlama-7b-Python-hf",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 29.49
+        },
+        "realtask_accuracy": 19.36,
+        "syntactic_accuracy": 38.7,
+        "semantic_accuracy": 36.87,
+        "prompted": false,
+        "size": 7.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "CodeLlama-13b-Instruct-hf": {
+        "link": "CodeLlama-13b-Instruct-hf",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 30.25
+        },
+        "realtask_accuracy": 10.53,
+        "syntactic_accuracy": 50.58,
+        "semantic_accuracy": 43.0,
+        "prompted": true,
+        "size": 13.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "CodeLlama-13b-Python-hf": {
+        "link": "CodeLlama-13b-Python-hf",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 29.82
+        },
+        "realtask_accuracy": 56.98,
+        "syntactic_accuracy": 12.89,
+        "semantic_accuracy": 4.88,
+        "prompted": false,
+        "size": 13.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "CodeLlama-13b-hf": {
+        "link": "CodeLlama-13b-hf",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 28.51
+        },
+        "realtask_accuracy": 6.65,
+        "syntactic_accuracy": 50.58,
+        "semantic_accuracy": 42.95,
+        "prompted": false,
+        "size": 13.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "CodeLlama-34b-Python-hf": {
+        "link": "CodeLlama-34b-Python-hf",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 9.4
+        },
+        "realtask_accuracy": 9.37,
+        "syntactic_accuracy": 15.57,
+        "semantic_accuracy": 5.34,
+        "prompted": false,
+        "size": 34.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Meta Llama3 8B": {
+        "link": "Meta Llama3 8B",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 51.89
+        },
+        "realtask_accuracy": 53.84,
+        "syntactic_accuracy": 54.14,
+        "semantic_accuracy": 47.8,
+        "prompted": false,
+        "size": 8.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Meta Llama3 8B Instruct": {
+        "link": "Meta Llama3 8B Instruct",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 46.04
+        },
+        "realtask_accuracy": 38.38,
+        "syntactic_accuracy": 58.1,
+        "semantic_accuracy": 48.21,
+        "prompted": true,
+        "size": 8.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Meta Llama3.1 70B": {
+        "link": "Meta Llama3.1 70B",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 37.56
+        },
+        "realtask_accuracy": 8.22,
+        "syntactic_accuracy": 64.09,
+        "semantic_accuracy": 59.0,
+        "prompted": false,
+        "size": 70.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Meta Llama3.1 70B Instruct": {
+        "link": "Meta Llama3.1 70B Instruct",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 60.0
+        },
+        "realtask_accuracy": 56.11,
+        "syntactic_accuracy": 64.41,
+        "semantic_accuracy": 62.25,
+        "prompted": true,
+        "size": 70.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Meta Llama3.1 8B": {
+        "link": "Meta Llama3.1 8B",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 42.06
+        },
+        "realtask_accuracy": 31.58,
+        "syntactic_accuracy": 53.95,
+        "semantic_accuracy": 48.09,
+        "prompted": false,
+        "size": 8.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Meta Llama3.1 8B Instruct": {
+        "link": "Meta Llama3.1 8B Instruct",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 45.22
+        },
+        "realtask_accuracy": 35.7,
+        "syntactic_accuracy": 56.54,
+        "semantic_accuracy": 50.36,
+        "prompted": true,
+        "size": 8.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Mistral 7B_v0.1 Instruct": {
+        "link": "Mistral-7B-Instruct-v0.1",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 45.55
+        },
+        "realtask_accuracy": 41.49,
+        "syntactic_accuracy": 52.74,
+        "semantic_accuracy": 46.16,
+        "prompted": true,
+        "size": 6.7,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Mistral 7B_v0.2 Instruct": {
+        "link": "Mistral-7B-Instruct-v0.2",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 39.14
+        },
+        "realtask_accuracy": 26.01,
+        "syntactic_accuracy": 52.14,
+        "semantic_accuracy": 47.97,
+        "prompted": true,
+        "size": 7.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Mistral 7B_v0.3 Instruct": {
+        "link": "Mistral-7B-Instruct-v0.3",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 43.33
+        },
+        "realtask_accuracy": 31.85,
+        "syntactic_accuracy": 54.42,
+        "semantic_accuracy": 51.25,
+        "prompted": true,
+        "size": 7.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Mixtral 8x7B_v0.1 Instruct": {
+        "link": "Mixtral-8x7B-Instruct-v0.1",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 40.93
+        },
+        "realtask_accuracy": 13.49,
+        "syntactic_accuracy": 61.17,
+        "semantic_accuracy": 54.89,
+        "prompted": true,
+        "size": 46.7,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Codestral 22B_v0.1": {
+        "link": "Codestral 22B_v0.1",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 47.6
+        },
+        "realtask_accuracy": 37.86,
+        "syntactic_accuracy": 60.34,
+        "semantic_accuracy": 52.11,
+        "prompted": false,
+        "size": 22.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Phi3 medium Instruct (4k)": {
+        "link": "Phi3 medium Instruct (4k)",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 50.95
+        },
+        "realtask_accuracy": 43.17,
+        "syntactic_accuracy": 58.42,
+        "semantic_accuracy": 56.34,
+        "prompted": true,
+        "size": 14.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Phi3 mini Instruct (128k)": {
+        "link": "Phi3 mini Instruct (128k)",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 37.93
+        },
+        "realtask_accuracy": 22.36,
+        "syntactic_accuracy": 53.01,
+        "semantic_accuracy": 48.65,
+        "prompted": true,
+        "size": 3.8,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Phi3 mini Instruct (4k)": {
+        "link": "Phi3 mini Instruct (4k)",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 39.99
+        },
+        "realtask_accuracy": 27.63,
+        "syntactic_accuracy": 54.73,
+        "semantic_accuracy": 46.65,
+        "prompted": true,
+        "size": 3.8,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Phi3 small Instruct (8k)": {
+        "link": "Phi3 small Instruct (8k)",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 43.69
+        },
+        "realtask_accuracy": 26.81,
+        "syntactic_accuracy": 57.6,
+        "semantic_accuracy": 56.92,
+        "prompted": true,
+        "size": 7.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Phind CodeLlama 34B_v2": {
+        "link": "Phind CodeLlama 34B_v2",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 39.96
+        },
+        "realtask_accuracy": 25.51,
+        "syntactic_accuracy": 57.57,
+        "semantic_accuracy": 47.47,
+        "prompted": false,
+        "size": 7.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Qwen2 0.5B Instruct": {
+        "link": "Qwen2 0.5B Instruct",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 34.21
+        },
+        "realtask_accuracy": 29.55,
+        "syntactic_accuracy": 38.58,
+        "semantic_accuracy": 37.53,
+        "prompted": true,
+        "size": 0.5,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Qwen2 1.5B Instruct": {
+        "link": "Qwen2 1.5B Instruct",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 34.03
+        },
+        "realtask_accuracy": 15.18,
+        "syntactic_accuracy": 51.54,
+        "semantic_accuracy": 47.5,
+        "prompted": true,
+        "size": 1.5,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Qwen2 7B": {
+        "link": "Qwen2 7B",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 53.28
+        },
+        "realtask_accuracy": 49.3,
+        "syntactic_accuracy": 58.31,
+        "semantic_accuracy": 55.23,
+        "prompted": false,
+        "size": 7.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Qwen2 7B Instruct": {
+        "link": "Qwen2 7B Instruct",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 51.3
+        },
+        "realtask_accuracy": 42.66,
+        "syntactic_accuracy": 59.9,
+        "semantic_accuracy": 57.08,
+        "prompted": true,
+        "size": 7.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "CodeQwen1.5 7B": {
+        "link": "CodeQwen1.5 7B",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 42.56
+        },
+        "realtask_accuracy": 36.76,
+        "syntactic_accuracy": 52.51,
+        "semantic_accuracy": 43.65,
+        "prompted": false,
+        "size": 7.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "CodeQwen1.5 7B Chat": {
+        "link": "CodeQwen1.5 7B Chat",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 49.82
+        },
+        "realtask_accuracy": 56.37,
+        "syntactic_accuracy": 49.66,
+        "semantic_accuracy": 41.18,
+        "prompted": false,
+        "size": 7.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "Yi 1.5 6B Chat": {
+        "link": "Yi 1.5 6B Chat",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 44.13
+        },
+        "realtask_accuracy": 33.57,
+        "syntactic_accuracy": 55.1,
+        "semantic_accuracy": 50.91,
+        "prompted": false,
+        "size": 6.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "DeepSeekCoder 33B": {
+        "link": "DeepSeekCoder 33B",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 6.69
+        },
+        "realtask_accuracy": 11.05,
+        "syntactic_accuracy": 0.0,
+        "semantic_accuracy": 5.33,
+        "prompted": false,
+        "size": 33.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "DeepSeekCoder 6.7B": {
+        "link": "DeepSeekCoder 6.7B",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 27.06
+        },
+        "realtask_accuracy": 4.8,
+        "syntactic_accuracy": 49.45,
+        "semantic_accuracy": 41.81,
+        "prompted": false,
+        "size": 6.7,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "DeepSeekCoder 6.7B Instruct": {
+        "link": "DeepSeekCoder 6.7B Instruct",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 29.4
+        },
+        "realtask_accuracy": 8.54,
+        "syntactic_accuracy": 50.8,
+        "semantic_accuracy": 42.94,
+        "prompted": true,
+        "size": 6.7,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "DeepSeekCoder 7B": {
+        "link": "DeepSeekCoder 7B",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 37.48
+        },
+        "realtask_accuracy": 17.19,
+        "syntactic_accuracy": 58.79,
+        "semantic_accuracy": 50.35,
+        "prompted": false,
+        "size": 7.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "DeepSeekMoE 16B": {
+        "link": "DeepSeekMoE 16B",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 29.31
+        },
+        "realtask_accuracy": 18.53,
+        "syntactic_accuracy": 39.98,
+        "semantic_accuracy": 36.56,
+        "prompted": false,
+        "size": 16.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "DeepSeekCoder V2-Lite": {
+        "link": "DeepSeekCoder V2 Lite",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 40.88
+        },
+        "realtask_accuracy": 23.47,
+        "syntactic_accuracy": 59.44,
+        "semantic_accuracy": 51.71,
+        "prompted": false,
+        "size": 16.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "DeepSeekCoder V2-Lite Instruct": {
+        "link": "DeepSeek-Coder-V2-Lite-Instruct",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 46.51
+        },
+        "realtask_accuracy": 33.62,
+        "syntactic_accuracy": 59.91,
+        "semantic_accuracy": 54.75,
+        "prompted": true,
+        "size": 16.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "InternLM2.5 7B Chat": {
+        "link": "internlm2_5-7b-chat",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 42.64
+        },
+        "realtask_accuracy": 27.43,
+        "syntactic_accuracy": 57.32,
+        "semantic_accuracy": 53.13,
+        "prompted": true,
+        "size": 7.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "StarCoder2 15B Instruct": {
+        "link": "StarCoder2 15B Instruct",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 47.94
+        },
+        "realtask_accuracy": 42.78,
+        "syntactic_accuracy": 56.57,
+        "semantic_accuracy": 49.07,
+        "prompted": true,
+        "size": 15.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    },
+    "StarCoder2 7B": {
+        "link": "StarCoder2 7B",
+        "open-data": "None",
+        "pass@1": {
+            "instruct": null,
+            "complete": 35.64
+        },
+        "realtask_accuracy": 27.42,
+        "syntactic_accuracy": 45.87,
+        "semantic_accuracy": 39.77,
+        "prompted": false,
+        "size": 7.0,
+        "direct_complete": false,
+        "lazy": false,
+        "elo_mle": 874
+    }
+}
